@@ -7,15 +7,15 @@
 ## Minimum Viable Product
 
 AudioWaterVapor is a web application inspired by SoundCloud built using Ruby on Rails
-and React.js. AudioWaterVapor allows users to:Phase 3 will focus on all of the functionality of tracks. The index, show, and
-upload form will all be handled in this phase. The edit form will also
+and React.js. AudioWaterVapor allows users to listen to tracks no matter what
+they are doing on the site. This will be a single page application.
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
 - [ ] Listen to uploaded audio files (while staying on site)
 - [ ] Upload audio files
-- [ ] Search through audio files for track or artist
+- [ ] Search through users/artists
 - [ ] Like tracks by other users
 - [ ] Comment on tracks
 - [ ] Follow other users

@@ -24,6 +24,9 @@ var Test = React.createClass({
 
     return(
       <div>
+        <audio src="assets/Fix_You-Yara.m4a" controls>
+          <p>you browser</p>
+        </audio>
         {users}
       </div>
     );

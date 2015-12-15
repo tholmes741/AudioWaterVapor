@@ -5,11 +5,11 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 username        | string    | not null
+email           | string    | not null
+bio             | text      |
+avatar          | string    | default
 password_digest | string    | not null
 session_token   | string    | not null
-bio             | text      |
-email           | string    | not null
-avatar          | string    | default
 
 
 ## Tracks

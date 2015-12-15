@@ -1,0 +1,22 @@
+<h1>Sign up</h1>
+
+<form action="<%= users_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  Email
+  <input type="text" name="user[email]" value="<%= @user.email %>"><br>
+
+  Username
+  <input type="text" name="user[username]" value="<%= @user.username %>"><br>
+
+  Password
+  <input type="password" name="user[password]" value=""><br>
+
+
+  <input type="hidden" name="user[avatar]" value="http://blogs.plos.org/opens/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
+
+  
+  <input type="submit" value="Sign in">
+
+
+</form>

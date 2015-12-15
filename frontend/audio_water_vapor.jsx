@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var Test = require('./components/user_test.jsx');
 
 // var test = React.creatClass({
 //   render: function() {
@@ -11,5 +12,5 @@ var ReactDOM = require('react-dom');
 
 document.addEventListener('DOMContentLoaded', function(){
   var content = document.getElementById('content');
-  ReactDOM.render(<div>hi</div>, content);
+  ReactDOM.render(<Test/>, content);
 });

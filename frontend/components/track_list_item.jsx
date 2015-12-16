@@ -9,6 +9,7 @@ var TrackListItem = React.createClass({
         <img src={this.props.track.image} className="thumbnail"></img>
         <audio src={this.props.track.track_url} controls>
         </audio>
+        {this.props.track.user.username}
       </div>
     );
   }

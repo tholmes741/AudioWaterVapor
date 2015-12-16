@@ -8,6 +8,10 @@ var ApiUtils = {
 
   fetchAllTracks: function(){
     $.get('api/tracks', {}, TrackActions.receiveAllTracks);
+  },
+
+  createSession: function(credentials){
+    $.post('session/new', {user: credentials}, SessionActions.receiveUser)
   }
 };
 

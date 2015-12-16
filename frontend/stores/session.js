@@ -2,7 +2,8 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var SessionConstants = require('../constants/session_constants');
 
-var _currentUser = null;
+var _sessionToken = sessionStorage.getItem('session_token');
+var _username = sessionStorage.getItem('username');
 var _errors = [];
 
 var SessionStore = new Store(AppDispatcher);
@@ -10,20 +11,41 @@ var SessionStore = new Store(AppDispatcher);
 SessionStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case SessionConstants.RECEIVED_CURRENT_USER:
-      _currentUser = payload.currentUser;
+      if(payload.errors) {
+        _errors = payload.errors;
+      } else {
+        setSessionStorage(payload.user.username, payload.user.sessionToken);
+      }
       break;
-    case SessionConstants.RECEIVED_ERRORS:
-      _errors = payload.errors;
+    case SessionConstants.LOGOUT:
+      removeSessionStorage();
       break;
   }
   SessionStore.__emitChange();
 };
 
-
 SessionStore.currentUser = function(){
-  return _currentUser;
+  return _username;
 };
 
 SessionStore.errors = function(){
-  return _error.slice(0);
+  return _errors.slice(0);
 };
+
+var setSessionStorage = function(username, sessionToken){
+  _username = username;
+  _sessionToken = sessionToken;
+
+  sessionStorage.setItem('username', username);
+  sessionStorage.setItem('session_token', sessionToken);
+};
+
+var removeSessionStorage = function(){
+  _username = null;
+  _sessionToken = null;
+
+  sessionStorage.setItem('user', null);
+  sessionStorage.setItem('session_token', null);
+};
+
+module.exports = SessionStore;

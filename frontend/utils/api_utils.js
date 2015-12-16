@@ -1,5 +1,6 @@
 var UserActions = require('../actions/user_actions.js');
 var TrackActions = require('../actions/track_actions.js');
+var SessionActions = require('../actions/session_actions.js');
 
 var ApiUtils = {
   fetchAllUsers: function(){
@@ -11,7 +12,21 @@ var ApiUtils = {
   },
 
   createSession: function(credentials){
-    $.post('session/new', {user: credentials}, SessionActions.receiveUser)
+    $.ajax({
+      url: 'api/session',
+      type: 'POST',
+      data: {user: credentials},
+      success: SessionActions.receiveCurrentUser,
+    });
+  },
+
+  destroySession: function() {
+    $.ajax({
+      url: 'api/session',
+      type: 'DELETE',
+      data: {},
+      sucess: SessionActions.logout
+    });
   }
 };
 

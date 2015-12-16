@@ -1,17 +1,20 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Test = require('./components/user_test.jsx');
 var TrackList = require('./components/track_list.jsx');
+var App = require('./components/app.jsx');
 
-// var test = React.creatClass({
-//   render: function() {
-//     return (
-//       <div>react stuff</div>
-//     );
-//   }
-// });
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+var IndexRoute = require('react-router').IndexRoute;
+
+var route = (
+  <Route path='/' component={App}>
+  </Route>
+);
+
+
 
 document.addEventListener('DOMContentLoaded', function(){
   var content = document.getElementById('content');
-  ReactDOM.render(<TrackList/>, content);
+  ReactDOM.render(<Router>{route}</Router>, content);
 });

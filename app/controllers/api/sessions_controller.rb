@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(
       params[:user][:username],
@@ -7,16 +7,12 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      redirect_to :root
+      reder :create
     else
-      flash.now[:errors] = ["Invalid username/passwor"]
-      render :new
+      render :json { errors: ["Invalid username/passwor"] }
     end
   end
 
-  def new
-
-  end
 
   def destroy
     sign_out

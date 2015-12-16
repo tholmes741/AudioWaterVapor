@@ -5,7 +5,7 @@ var SessionStore = require('../stores/session.js');
 var App = React.createClass({
   getInitialState: function(){
     return {
-      currentUser: null,
+      currentUser: SessionStore.currentUser(),
     };
   },
 
@@ -18,8 +18,10 @@ var App = React.createClass({
   },
 
   render: function(){
+    var user = this.state.currentUser ? <div>{this.state.currentUser}</div> : <div></div>;
     return (
       <div>
+        {user}
         <Navbar currentUser={this.state.currentUser} />
         <div>
           {this.props.children}

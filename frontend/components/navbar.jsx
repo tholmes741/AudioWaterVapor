@@ -1,6 +1,7 @@
 var React = require('react');
 var SessionStore = require('../stores/session.js');
 var History = require('react-router').History;
+var ApiUtils = require('../utils/api_utils.js');
 
 var Navbar = React.createClass({
   mixins: [History],
@@ -27,14 +28,31 @@ var Navbar = React.createClass({
     this.history.pushState(null, 'login');
   },
 
+  logout: function(){
+    ApiUtils.destroySession();
+  },
+
   render: function() {
-    var user = this.props.currentUser ? <div>{this.props.currentUser}</div> : <div></div>;
+    var userButtons;
+    if (this.props.currentUser){
+      userButtons = (
+        <div>
+          <div onClick={this.logout}>Logout</div>
+          <div>User DropDown</div>
+        </div>
+      );
+    } else {
+      userButtons = (
+        <div>
+          <div onClick={this.signUp}>Sign Up</div>
+          <div onClick={this.login}>Login</div>
+        </div>
+      );
+    }
     return (
       <div>
-        {user}
         navbar
-        <div onClick={this.signUp}>Sign Up</div>
-        <div onClick={this.login}>Login</div>
+        {userButtons}
       </div>
     );
   }

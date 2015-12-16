@@ -25,7 +25,7 @@ var ApiUtils = {
       url: 'api/session',
       type: 'DELETE',
       data: {},
-      sucess: SessionActions.logout
+      success: SessionActions.logout
     });
   }
 };

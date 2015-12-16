@@ -11,6 +11,7 @@ var IndexRoute = require('react-router').IndexRoute;
 
 var route = (
   <Route path='/' component={App}>
+    <IndexRoute component={TrackList}/>
     <Route path='/signup' component={SignUp} />
     <Route path='/login' component={Login} />
   </Route>

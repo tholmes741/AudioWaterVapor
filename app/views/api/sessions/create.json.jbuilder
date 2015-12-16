@@ -1,2 +1,2 @@
 json.username @user.username
-json.sessionToken @user.sessionToken
+json.sessionToken @user.session_token

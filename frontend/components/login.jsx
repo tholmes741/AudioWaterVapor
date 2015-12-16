@@ -2,20 +2,24 @@ var React = require('react');
 var ApiUtils = require('../utils/api_utils.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
-var SignUp = React.createClass({
+var Login = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function(){
     return {
       username: '',
-      email: '',
       password: ''
     };
   },
 
   handleSubmit: function(e){
     e.preventDefault();
-    console.log('submitted');
+    var credentials = {
+      username: this.state.username,
+      password: this.state.password
+    };
+
+    ApiUtils.createSession(credentials);
   },
 
   render: function() {
@@ -24,16 +28,14 @@ var SignUp = React.createClass({
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
           <input type='text' valueLink={this.linkState('username')}/>
-          <label>Email</label>
-          <input type='text' valueLink={this.linkState('email')}/>
           <label>Password</label>
           <input type='password' valueLink={this.linkState('password')}/>
 
-          <input type="submit" value="Create Account"/>
+          <input type="submit" value="Login"/>
         </form>
       </div>
     );
   }
 });
 
-module.exports = SignUp;
+module.exports = Login;

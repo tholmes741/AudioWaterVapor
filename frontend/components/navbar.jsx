@@ -5,7 +5,7 @@ var History = require('react-router').History;
 var Navbar = React.createClass({
   mixins: [History],
   getInitialState: function(){
-    return {loggedIn: false, currentUser: null};
+    return {currentUser: null};
   },
 
   componentDidMount: function() {
@@ -15,7 +15,6 @@ var Navbar = React.createClass({
 
   sessionChange: function(){
     this.setState({
-      loggedIn: SessionStore.loggedIn(),
       currentUser: SessionStore.currentUser()
     });
   },
@@ -24,11 +23,18 @@ var Navbar = React.createClass({
     this.history.pushState(null, 'signup');
   },
 
+  login: function(){
+    this.history.pushState(null, 'login');
+  },
+
   render: function() {
+    var user = this.props.currentUser ? <div>{this.props.currentUser}</div> : <div></div>;
     return (
       <div>
+        {user}
         navbar
         <div onClick={this.signUp}>Sign Up</div>
+        <div onClick={this.login}>Login</div>
       </div>
     );
   }

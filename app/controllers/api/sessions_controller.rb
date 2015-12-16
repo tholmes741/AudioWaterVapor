@@ -7,9 +7,9 @@ class Api::SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      reder :create
+      render :create
     else
-      render :json { errors: ["Invalid username/passwor"] }
+      render json: { errors: ["Invalid username/passwor"] }
     end
   end
 

@@ -1,7 +1,9 @@
 var React = require('react');
 var SessionStore = require('../stores/session.js');
+var History = require('react-router').History;
 
 var Navbar = React.createClass({
+  mixins: [History],
   getInitialState: function(){
     return {loggedIn: false, currentUser: null};
   },
@@ -18,9 +20,16 @@ var Navbar = React.createClass({
     });
   },
 
+  signUp: function(){
+    this.history.pushState(null, 'signup');
+  },
+
   render: function() {
     return (
-      <div>navbar</div>
+      <div>
+        navbar
+        <div onClick={this.signUp}>Sign Up</div>
+      </div>
     );
   }
 

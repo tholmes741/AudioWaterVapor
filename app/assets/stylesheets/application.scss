@@ -42,25 +42,14 @@ label {
   margin-left: 42px;
 }
 
-.nav-button {
 
-  display: inline-block;
-  color: black;
-  padding-right: 10px;
-  padding-left: 10px;
-  border-left: 1px solid black;
-}
 
-.nav-container:first-child {
-  border-right: 1px solid black;
-}
-
-.nav-button:hover {
-  background-color: gray;
-}
-
-.thumbnail {
-   height: 30px;
-   width: 30px;
+.icon {
+   height: 100px;
+   width: 100px;
    padding-right: 10px;
+ }
+
+ .icon:hover {
+   cursor: pointer;
  }

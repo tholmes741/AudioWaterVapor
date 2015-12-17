@@ -18,6 +18,12 @@ var SignUp = React.createClass({
   componentDidMount: function(){
     this.listener = SessionStore.addListener(this.onChange);
   },
+  
+  componentWillMount: function(){
+    if(SessionStore.currentUser()) {
+      this.props.history.goBack();
+    }
+  },
 
   componentWillUnmount: function(){
     this.listener.remove();

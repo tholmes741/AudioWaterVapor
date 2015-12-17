@@ -42,23 +42,29 @@ var Navbar = React.createClass({
     if (this.props.currentUser){
       userButtons = (
         <div className="pull-right">
-          <div className="nav-button" onClick={this.logout}>Logout</div>
-          <div>{this.props.currentUser} DropDown</div>
+          <li className="nav-button" onClick={this.logout}>Logout</li>
+          <li>{this.props.currentUser} DropDown</li>
         </div>
       );
     } else {
       userButtons = (
         <div className="pull-right">
-          <div className="nav-button" onClick={this.signUp}>Sign Up</div>
-          <div className="nav-button" onClick={this.login}>Login</div>
+          <li className="nav-button" onClick={this.signUp}>Sign Up</li>
+          <li className="nav-button" onClick={this.login}>Login</li>
         </div>
       );
     }
     return (
       <nav className="navbar navbar-default navbar-static-top">
-        {this.props.currentUser}
-        <div className="nav-button" onClick={this.tracks}>Tracks</div>
-        {userButtons}
+        <div className="container-fluid">
+          <ul className="nav navbar-nav">
+            <li
+              className="nav-button pull-left"
+              onClick={this.tracks}>Tracks
+            </li>
+            {userButtons}
+          </ul>
+        </div>
       </nav>
     );
   }

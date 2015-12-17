@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  window.currentUsername = <%= current_user ? current_user.username.inspect.html_safe : "null" %>;
+</script>
+<%= javascript_include_tag 'application' %>
+<div id="content">
+  things will go here
+</div>

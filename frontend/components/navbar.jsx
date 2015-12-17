@@ -20,6 +20,7 @@ var Navbar = React.createClass({
   //   });
   // },
 
+
   signUp: function(){
     this.history.pushState(null, 'signup');
   },
@@ -32,28 +33,33 @@ var Navbar = React.createClass({
     ApiUtils.destroySession();
   },
 
+  tracks: function(){
+    this.history.pushState(null, '/');
+  },
+
   render: function() {
     var userButtons;
     if (this.props.currentUser){
       userButtons = (
-        <div>
-          <div onClick={this.logout}>Logout</div>
-          <div>User DropDown</div>
+        <div className="pull-right">
+          <div className="nav-button" onClick={this.logout}>Logout</div>
+          <div>{this.props.currentUser} DropDown</div>
         </div>
       );
     } else {
       userButtons = (
-        <div>
-          <div onClick={this.signUp}>Sign Up</div>
-          <div onClick={this.login}>Login</div>
+        <div className="pull-right">
+          <div className="nav-button" onClick={this.signUp}>Sign Up</div>
+          <div className="nav-button" onClick={this.login}>Login</div>
         </div>
       );
     }
     return (
-      <div>
-        navbar
+      <nav className="navbar navbar-default navbar-static-top">
+        {this.props.currentUser}
+        <div className="nav-button" onClick={this.tracks}>Tracks</div>
         {userButtons}
-      </div>
+      </nav>
     );
   }
 

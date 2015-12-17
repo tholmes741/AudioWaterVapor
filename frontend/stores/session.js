@@ -2,8 +2,8 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher.js');
 var SessionConstants = require('../constants/session_constants');
 
-var _sessionToken = sessionStorage.getItem('session_token');
-var _username = sessionStorage.getItem('username');
+var _sessionToken = null;
+var _username = window.currentUsername;
 var _errors = [];
 
 var SessionStore = new Store(AppDispatcher);
@@ -36,17 +36,11 @@ var setSessionStorage = function(username, sessionToken){
   _username = username;
   _sessionToken = sessionToken;
   _errors = [];
-
-  sessionStorage.setItem('username', username);
-  sessionStorage.setItem('session_token', sessionToken);
 };
 
 var removeSessionStorage = function(){
   _username = null;
   _sessionToken = null;
-
-  sessionStorage.setItem('user', null);
-  sessionStorage.setItem('session_token', null);
 };
 
 module.exports = SessionStore;

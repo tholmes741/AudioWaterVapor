@@ -21,8 +21,9 @@ var App = React.createClass({
     var user = this.state.currentUser ? <div>{this.state.currentUser}</div> : <div></div>;
     return (
       <div>
-        {user}
-        <Navbar currentUser={this.state.currentUser} />
+        <div className="nav">
+          <Navbar currentUser={this.state.currentUser} />
+        </div>
         <div>
           {this.props.children}
         </div>

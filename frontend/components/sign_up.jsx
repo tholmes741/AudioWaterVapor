@@ -2,10 +2,9 @@ var React = require('react');
 var ApiUtils = require('../utils/api_utils.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SessionStore = require('../stores/session.js');
-var History = require('react-router').History;
 
 var SignUp = React.createClass({
-  mixins: [History, LinkedStateMixin],
+  mixins: [LinkedStateMixin],
 
   getInitialState: function(){
     return {
@@ -29,7 +28,7 @@ var SignUp = React.createClass({
     if (SessionStore.errors().length > 0){
       this.setState({errors: SessionStore.errors().join('. ')});
     } else {
-      this.history.pushState(null, '/');
+      this.props.history.pushState(null, '/');
     }
   },
 
@@ -46,17 +45,47 @@ var SignUp = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="form">
+        <h1>Sign Up</h1>
         <div>{this.state.errors}</div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username</label>
-          <input type='text' valueLink={this.linkState('username')}/>
-          <label>Email</label>
-          <input type='text' valueLink={this.linkState('email')}/>
-          <label>Password</label>
-          <input type='password' valueLink={this.linkState('password')}/>
+        <form className="form-horizontal" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label>Username</label>
+            <br></br>
+            <input
+              id="username"
+              className="form-control"
+              type='text'
+              valueLink={this.linkState('username')}
+              placeholder="Username"/>
+          </div>
 
-          <input type="submit" value="Create Account"/>
+          <div className="form-group">
+            <label>Email</label>
+            <br></br>
+            <input
+              className="form-control"
+              in="email"
+              type='text'
+              valueLink={this.linkState('email')}
+              placeholder="Email"/>
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <br></br>
+            <input
+              id="password"
+              className="form-control"
+              type='password'
+              valueLink={this.linkState('password')}
+              placeholder="Password"/>
+          </div>
+
+          <input
+            type="submit"
+            value="Create Account"
+            className="btn btn-default"/>
         </form>
       </div>
     );

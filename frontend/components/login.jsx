@@ -3,6 +3,7 @@ var ApiUtils = require('../utils/api_utils.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SessionStore = require('../stores/session.js');
 
+
 var Login = React.createClass({
   mixins: [LinkedStateMixin],
 
@@ -26,7 +27,7 @@ var Login = React.createClass({
     if (SessionStore.errors().length > 0){
       this.setState({errors: SessionStore.errors().join('. ')});
     } else {
-      this.history.pushState(null, '/');
+      this.props.history.pushState(null, '/');
     }
   },
 
@@ -42,15 +43,29 @@ var Login = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="form">
+        <h1>Log In</h1>
         <div>{this.state.errors}</div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username</label>
-          <input type='text' valueLink={this.linkState('username')}/>
-          <label>Password</label>
-          <input type='password' valueLink={this.linkState('password')}/>
+        <form className="form-horizontal" onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <label>Username</label>
+            <input
+              className="form-control"
+              type='text'
+              placeholder="Username"
+              valueLink={this.linkState('username')}/>
+          </div>
 
-          <input type="submit" value="Login"/>
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              className="form-control"
+              placeholder="Password"
+              type='password'
+              valueLink={this.linkState('password')}/>
+          </div>
+
+          <input className="btn btn-default" type="submit" value="Log In"/>
         </form>
       </div>
     );

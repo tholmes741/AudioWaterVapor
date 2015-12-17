@@ -1,6 +1,7 @@
 var React = require('react');
 var ApiUtils = require('../utils/api_utils.js');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var SessionStore = require('../stores/session.js');
 
 var Login = React.createClass({
   mixins: [LinkedStateMixin],
@@ -8,8 +9,25 @@ var Login = React.createClass({
   getInitialState: function(){
     return {
       username: '',
-      password: ''
+      password: '',
+      errors: []
     };
+  },
+
+  componentDidMount: function(){
+    this.listener = SessionStore.addListener(this.onChange);
+  },
+
+  componentWillUnmount: function(){
+    this.listener.remove();
+  },
+
+  onChange: function(){
+    if (SessionStore.errors().length > 0){
+      this.setState({errors: SessionStore.errors().join('. ')});
+    } else {
+      this.history.pushState(null, '/');
+    }
   },
 
   handleSubmit: function(e){
@@ -25,6 +43,7 @@ var Login = React.createClass({
   render: function() {
     return (
       <div>
+        <div>{this.state.errors}</div>
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
           <input type='text' valueLink={this.linkState('username')}/>

@@ -11,8 +11,8 @@ var SessionStore = new Store(AppDispatcher);
 SessionStore.__onDispatch = function(payload) {
   switch(payload.actionType) {
     case SessionConstants.RECEIVED_CURRENT_USER:
-      if(payload.errors) {
-        _errors = payload.errors;
+      if(payload.user.errors) {
+        _errors = payload.user.errors;
       } else {
         setSessionStorage(payload.user.username, payload.user.sessionToken);
       }
@@ -35,6 +35,7 @@ SessionStore.errors = function(){
 var setSessionStorage = function(username, sessionToken){
   _username = username;
   _sessionToken = sessionToken;
+  _errors = [];
 
   sessionStorage.setItem('username', username);
   sessionStorage.setItem('session_token', sessionToken);

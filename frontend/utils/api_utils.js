@@ -27,6 +27,15 @@ var ApiUtils = {
       data: {},
       success: SessionActions.logout
     });
+  },
+
+  createUser: function(user){
+    $.ajax({
+      url: 'api/users',
+      type: 'POST',
+      data: {user: user},
+      success: SessionActions.receiveCurrentUser
+    });
   }
 };
 

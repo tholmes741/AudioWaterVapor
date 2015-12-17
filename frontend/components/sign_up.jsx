@@ -15,7 +15,13 @@ var SignUp = React.createClass({
 
   handleSubmit: function(e){
     e.preventDefault();
-    console.log('submitted');
+    var user = {
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    ApiUtils.createUser(user);
   },
 
   render: function() {

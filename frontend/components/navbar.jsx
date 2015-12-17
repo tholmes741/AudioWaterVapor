@@ -5,20 +5,20 @@ var ApiUtils = require('../utils/api_utils.js');
 
 var Navbar = React.createClass({
   mixins: [History],
-  getInitialState: function(){
-    return {currentUser: null};
-  },
-
-  componentDidMount: function() {
-    SessionStore.addListener(this.sessionChange);
-
-  },
-
-  sessionChange: function(){
-    this.setState({
-      currentUser: SessionStore.currentUser()
-    });
-  },
+  // getInitialState: function(){
+  //   return {currentUser: null};
+  // },
+  //
+  // componentDidMount: function() {
+  //   SessionStore.addListener(this.sessionChange);
+  //
+  // },
+  //
+  // sessionChange: function(){
+  //   this.setState({
+  //     currentUser: SessionStore.currentUser()
+  //   });
+  // },
 
   signUp: function(){
     this.history.pushState(null, 'signup');

@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      redirect_to :root
+      render :create
     else
       render json: @user.errors.full_messages
     end

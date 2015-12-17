@@ -7,7 +7,11 @@ class User < ActiveRecord::Base
 
   has_many :tracks
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_avatar
+
+  def ensure_avatar
+    self.avatar ||= 'http://www.cybersummitusa.com/site/wp-content/uploads/2014/01/avatar_blank.png'
+  end
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token

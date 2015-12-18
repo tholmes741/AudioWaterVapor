@@ -30,6 +30,6 @@ user_id: 1, title: "Can't Feel My Face (Remix)", track_url: 'http://res.cloudina
 
 User.create(
 username: 'tommy', email: 'example.gmail.com', password: 'password',
-avatar: 'http://hellogiggles.com/wp-content/uploads/2014/06/10/Calvin-and-Hobbes-hugging-calvin-and-hobbes-1395524-1024-768.jpg',
+avatar: 'me_ang_angelique_p2lemb.jpg',
 bio: 'This is my app and I really hope I can make it super pretty. Please enjoy some music!'
 )

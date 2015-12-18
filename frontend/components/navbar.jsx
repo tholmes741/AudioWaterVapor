@@ -5,21 +5,10 @@ var ApiUtils = require('../utils/api_utils.js');
 
 var Navbar = React.createClass({
   mixins: [History],
-  // getInitialState: function(){
-  //   return {currentUser: null};
-  // },
-  //
-  // componentDidMount: function() {
-  //   SessionStore.addListener(this.sessionChange);
-  //
-  // },
-  //
-  // sessionChange: function(){
-  //   this.setState({
-  //     currentUser: SessionStore.currentUser()
-  //   });
-  // },
 
+  profile: function(){
+    this.history.pushState(null, 'users/' + this.props.currentUser);
+  },
 
   signUp: function(){
     this.history.pushState(null, 'signup');
@@ -27,6 +16,14 @@ var Navbar = React.createClass({
 
   login: function(){
     this.history.pushState(null, 'login');
+  },
+
+  upload: function(){
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
+      if(!error){
+        console.log(results);
+      }
+    }.bind(this));
   },
 
   logout: function(){
@@ -45,11 +42,13 @@ var Navbar = React.createClass({
           <li className='dropdown'>
             <a className='dropdown-toggle' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
             <ul className='dropdown-menu'>
-              <li><a href='#'>{this.props.currentUser} DropDown</a></li>
-              <li onClick={this.logout}><a>Logout</a></li>
+              <li onClick={this.profile}><a className='nav-button'>Profile</a></li>
+              <li onClick={this.upload}><a className='nav-button'>Upload</a></li>
+              <li><a href='#'>Edit Profile</a></li>
+              <li className="divider"></li>
+              <li onClick={this.logout}><a className='nav-button'>Logout</a></li>
             </ul>
           </li>
-          <li onClick={this.logout}><a>Logout</a></li>
         </ul>
       );
     } else {

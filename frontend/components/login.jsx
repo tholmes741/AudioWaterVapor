@@ -34,7 +34,7 @@ var Login = React.createClass({
     if (SessionStore.errors().length > 0){
       this.setState({errors: SessionStore.errors().join('. ')});
     } else {
-      this.props.history.pushState(null, '/');
+      this.props.history.goBack();
     }
   },
 

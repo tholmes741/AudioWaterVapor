@@ -1,6 +1,7 @@
 var React = require('react');
 var UserStore = require('../stores/user.js');
 var UserTrackList = require('./user_track_list.jsx');
+var ApiUtils = require('../utils/api_utils.js');
 
 var UserPage = React.createClass({
   getInitialState: function(){
@@ -9,14 +10,41 @@ var UserPage = React.createClass({
     };
   },
 
+  componentDidMount: function(){
+    this.listener = UserStore.addListener(this.onChange);
+    ApiUtils.fetchAllUsers();
+  },
+
+  componentWillUnmount: function(){
+    this.listener.remove();
+  },
+
+  onChange: function(){
+    this.setState({user: UserStore.find(parseInt(this.props.params.userId))});
+  },
+
+  userPage: function(){
+    if (this.state.user) {
+      var user = this.state.user;
+      var avatar = url + 'w_150,h_180/' + user.avatar;
+      return(
+        <div>
+          <h2>{user.username}</h2>
+          <img className='avatar'src={avatar}></img>
+          <p>{user.bio}</p>
+          <UserTrackList tracks={user.tracks}/>
+        </div>
+      );
+    }
+  },
+
+
+
   render: function(){
-    var user = this.state.user;
+
     return (
       <div>
-        <h2>{user.username}</h2>
-        <img src={user.avatar}></img>
-        <p>{user.bio}</p>
-        <UserTrackList tracks={user.tracks}/>
+        {this.userPage()}
       </div>
     );
   }

@@ -3,6 +3,7 @@ var Navbar = require('./navbar.jsx');
 var SessionStore = require('../stores/session.js');
 var PlayStore = require('../stores/play.js');
 var Player = require('./player.jsx');
+var ApiUtils = require('../utils/api_utils.js');
 
 var App = React.createClass({
   getInitialState: function(){
@@ -15,6 +16,7 @@ var App = React.createClass({
   componentDidMount: function(){
     this.listener = SessionStore.addListener(this.onChange);
     this.play = PlayStore.addListener(this.onChange);
+    ApiUtils.fetchAllUsers();
   },
 
   playTrack: function(){

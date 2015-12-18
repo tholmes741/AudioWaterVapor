@@ -9,9 +9,9 @@ var TrackListItem = React.createClass({
   },
 
   render: function(){
-
     return (
       <li className="track-list-item">
+        change
         {this.props.track.title}
         <br></br>
         <img

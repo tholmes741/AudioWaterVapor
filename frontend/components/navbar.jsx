@@ -41,27 +41,31 @@ var Navbar = React.createClass({
     var userButtons;
     if (this.props.currentUser){
       userButtons = (
-        <div className="pull-right ">
-          <li onClick={this.logout}>Logout</li>
-          <li>{this.props.currentUser} DropDown</li>
-        </div>
+        <ul className="nav navbar-nav pull-right">
+          <li className='dropdown'>
+            <a className='dropdown-toggle' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+            <ul className='dropdown-menu'>
+              <li><a href='#'>{this.props.currentUser} DropDown</a></li>
+              <li onClick={this.logout}><a>Logout</a></li>
+            </ul>
+          </li>
+          <li onClick={this.logout}><a>Logout</a></li>
+        </ul>
       );
     } else {
       userButtons = (
-        <div className="pull-right">
-          <button className="btn btn-defualt" onClick={this.signUp}>Sign Up</button>
-          <button className="btn btn-defualt" onClick={this.login}>Login</button>
-        </div>
+        <ul className="nav navbar-nav pull-right">
+          <li onClick={this.signUp}><a className='nav-button'>Sign Up</a></li>
+          <li onClick={this.login}><a className='nav-button'>Log In</a></li>
+        </ul>
       );
     }
     return (
-      <nav className="navbar navbar-default">
+      <nav className="navbar navbar-inverse">
         <div className="container-fluid">
           <ul className='nav navbar-nav'>
-            <li ><a href='#' onClick={this.tracks}>Track</a></li>
-            <li ><a href="#">Example</a></li>
+            <li ><a className='nav-button'onClick={this.tracks}>Track</a></li>
           </ul>
-          <button className='btn btn-defualt'>Yay</button>
           {userButtons}
         </div>
       </nav>

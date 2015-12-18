@@ -18,9 +18,11 @@ var SignUp = React.createClass({
   componentDidMount: function(){
     this.listener = SessionStore.addListener(this.onChange);
   },
-  
+
   componentWillMount: function(){
+    console.log('outside');
     if(SessionStore.currentUser()) {
+      console.log('here');
       this.props.history.goBack();
     }
   },

@@ -20,6 +20,7 @@ var Login = React.createClass({
   },
 
   componentWillMount: function(){
+    console.log(SessionStore.currentUser());
     if(SessionStore.currentUser()) {
       this.props.history.goBack();
     }

@@ -26,9 +26,11 @@ var TrackList = React.createClass({
       return(< TrackListItem track={track} key={idx} />);
     });
     return(
-      <div>
+      <div className='track-list-container'>
         Track List
-        {tracks}
+        <ul className='track-list'>
+          {tracks}
+        </ul>
       </div>
     );
   }

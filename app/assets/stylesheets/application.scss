@@ -16,6 +16,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
+
 .form{
   margin: auto;
   margin-top: 100px;
@@ -52,4 +54,10 @@ label {
 
  .icon:hover {
    cursor: pointer;
+ }
+
+ .group:after {
+   content: "";
+   display: block;
+   clear: both;
  }

@@ -5,22 +5,23 @@ var Player = React.createClass({
 
   },
 
-  // componentDidMount: function(){
-  //   this.refs.audio.load();
-  //   this.refs.audio.play();
-  // },
+  togglePlay: function(){
+    console.log(this.refs.audio.paused);
+    if (this.refs.audio.paused) {
+      this.refs.audio.play();
+    } else {
+      this.refs.audio.pause();
+    }
+  },
 
-  // componentWillUpdate: function(){
-  //   this.refs.audio.load();
-  //   this.refs.audio.play();
-  // },
+
 
   render: function(){
     return(
       <div className="player">
         {this.props.track.title}
         <audio ref="audio" src={this.props.track.trackUrl} autoPlay></audio>
-
+        <div onClick={this.togglePlay}>Play/pause</div>
       </div>
     );
   }

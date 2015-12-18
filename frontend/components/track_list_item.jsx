@@ -11,14 +11,14 @@ var TrackListItem = React.createClass({
   render: function(){
 
     return (
-      <div>
+      <li className="track-list-item">
         {this.props.track.title}
         <br></br>
         <img
           onClick={this.handleClick}
           src={this.props.track.image}
           className="icon"></img>
-      </div>
+      </li>
     );
   }
 });

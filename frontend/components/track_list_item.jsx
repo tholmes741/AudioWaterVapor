@@ -9,6 +9,7 @@ var TrackListItem = React.createClass({
   },
 
   render: function(){
+    var image = url + 'w_35,h_35/' + this.props.track.image;
     return (
       <li className="track-list-item">
         change
@@ -16,7 +17,7 @@ var TrackListItem = React.createClass({
         <br></br>
         <img
           onClick={this.handleClick}
-          src={this.props.track.image}
+          src={image}
           className="icon"></img>
       </li>
     );

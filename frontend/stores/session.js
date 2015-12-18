@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var SessionConstants = require('../constants/session_constants');
 
 var _sessionToken = null;
-var _username = window.currentUsername;
+var _userId = window.currentUserId;
 var _errors = [];
 
 var SessionStore = new Store(AppDispatcher);
@@ -14,7 +14,7 @@ SessionStore.__onDispatch = function(payload) {
       if(payload.user.errors) {
         _errors = payload.user.errors;
       } else {
-        setSessionStorage(payload.user.username, payload.user.sessionToken);
+        setSessionStorage(payload.user.id);
       }
       break;
     case SessionConstants.LOGOUT:
@@ -25,22 +25,20 @@ SessionStore.__onDispatch = function(payload) {
 };
 
 SessionStore.currentUser = function(){
-  return _username;
+  return _userId;
 };
 
 SessionStore.errors = function(){
   return _errors.slice(0);
 };
 
-var setSessionStorage = function(username, sessionToken){
-  _username = username;
-  _sessionToken = sessionToken;
+var setSessionStorage = function(userId){
+  _userId = userId;
   _errors = [];
 };
 
 var removeSessionStorage = function(){
-  _username = null;
-  _sessionToken = null;
+  _userId = null;
 };
 
 module.exports = SessionStore;

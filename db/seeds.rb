@@ -19,6 +19,15 @@ Track.create(
 user_id: 1, title: "Latch Remix", track_url: 'assets/Latch_lost_kings.mp3',
 )
 
+Track.create(
+user_id: 1, title: "Tell Me", track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450460483/Lyvo_Tell_Me_b0oks9.mp3',
+)
+
+Track.create(
+user_id: 1, title: "Can't Feel My Face (Remix)", track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450460872/Can_t_Feel_My_Face_squue2.mp3',
+)
+
+
 User.create(
 username: 'tommy', email: 'example.gmail.com', password: 'password',
 avatar: 'http://hellogiggles.com/wp-content/uploads/2014/06/10/Calvin-and-Hobbes-hugging-calvin-and-hobbes-1395524-1024-768.jpg'

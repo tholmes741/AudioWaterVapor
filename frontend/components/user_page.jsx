@@ -19,6 +19,10 @@ var UserPage = React.createClass({
     this.listener.remove();
   },
 
+  componentWillReceiveProps: function(){
+    this.setState({user: UserStore.find(parseInt(this.props.params.userId))});
+  },
+
   onChange: function(){
     this.setState({user: UserStore.find(parseInt(this.props.params.userId))});
   },
@@ -31,7 +35,10 @@ var UserPage = React.createClass({
         <div>
           <h2>{user.username}</h2>
           <img className='avatar'src={avatar}></img>
-          <p>{user.bio}</p>
+          <div>
+            <h3>Bio</h3>
+            <p>{user.bio}</p>
+          </div>
           <UserTrackList tracks={user.tracks}/>
         </div>
       );

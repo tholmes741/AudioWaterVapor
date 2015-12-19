@@ -7,10 +7,14 @@ class User < ActiveRecord::Base
 
   has_many :tracks
 
-  after_initialize :ensure_session_token, :ensure_avatar
+  after_initialize :ensure_session_token, :ensure_avatar, :ensure_bio
+
+  def ensure_bio
+    self.bio ||= "I need to make my bio."
+  end
 
   def ensure_avatar
-    self.avatar ||= 'http://www.cybersummitusa.com/site/wp-content/uploads/2014/01/avatar_blank.png'
+    self.avatar ||= 'avatar_blank_c7korl.png'
   end
 
   def ensure_session_token

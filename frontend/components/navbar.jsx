@@ -1,7 +1,9 @@
+/* global cloudinary CLOUDINARY_OPTIONS */
 var React = require('react');
 var SessionStore = require('../stores/session.js');
 var History = require('react-router').History;
 var ApiUtils = require('../utils/api_utils.js');
+var SearchBar = require('./search_bar.jsx');
 
 var Navbar = React.createClass({
   mixins: [History],
@@ -40,13 +42,20 @@ var Navbar = React.createClass({
       userButtons = (
         <ul className="nav navbar-nav pull-right">
           <li className='dropdown'>
-            <a className='dropdown-toggle' data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span className="caret"></span></a>
+            <a className='dropdown-toggle'
+              data-toggle="dropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false">Dropdown <span className="caret"></span></a>
             <ul className='dropdown-menu'>
-              <li onClick={this.profile}><a className='nav-button'>Profile</a></li>
-              <li onClick={this.upload}><a className='nav-button'>Upload</a></li>
+              <li onClick={this.profile}><a
+                className='nav-button'>Profile</a></li>
+              <li onClick={this.upload}><a
+                className='nav-button'>Upload</a></li>
               <li><a href='#'>Edit Profile</a></li>
               <li className="divider"></li>
-              <li onClick={this.logout}><a className='nav-button'>Logout</a></li>
+              <li onClick={this.logout}><a
+                className='nav-button'>Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -65,6 +74,7 @@ var Navbar = React.createClass({
           <ul className='nav navbar-nav'>
             <li ><a className='nav-button'onClick={this.tracks}>Track</a></li>
           </ul>
+          <SearchBar />
           {userButtons}
         </div>
       </nav>

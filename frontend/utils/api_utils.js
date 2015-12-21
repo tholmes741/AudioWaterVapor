@@ -36,6 +36,28 @@ var ApiUtils = {
       data: {user: user},
       success: SessionActions.receiveCurrentUser
     });
+  },
+
+  createLike: function(like){
+    $.ajax({
+      url: 'api/likes',
+      type: 'POST',
+      data: {like: like},
+      success: function(response){
+        console.log(response);
+      }
+    });
+  },
+
+  destroyLike: function(like){
+    $.ajax({
+      url: 'api/likes',
+      type: 'DELETE',
+      data: {like: like},
+      success: function(response){
+        console.log('deleted', response);
+      }
+    });
   }
 };
 

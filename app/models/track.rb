@@ -8,4 +8,5 @@ class Track < ActiveRecord::Base
   end
 
   belongs_to :user
+  has_many :likes
 end

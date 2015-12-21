@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :tracks
+  has_many :likes
 
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_bio
 
@@ -44,4 +45,9 @@ class User < ActiveRecord::Base
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil
   end
+
+  def self.find_by_track_id(track_id)
+    User.find(Track.find(track_id).user_id)
+  end
+
 end

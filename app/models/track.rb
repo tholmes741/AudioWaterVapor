@@ -9,4 +9,8 @@ class Track < ActiveRecord::Base
 
   belongs_to :user
   has_many :likes
+
+  def has_been_liked?(user_id)
+    self.likes.any? {|like| like.user_id == user_id }
+  end 
 end

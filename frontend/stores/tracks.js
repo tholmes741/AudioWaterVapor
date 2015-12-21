@@ -3,7 +3,7 @@ var AppDispatcher = require('../dispatcher/dispatcher.js');
 var TrackConstants = require('../constants/track_constants.js');
 
 
-var _tracks = [];
+var _tracks = {};
 
 var TrackStore = new Store(AppDispatcher);
 
@@ -12,16 +12,29 @@ TrackStore.__onDispatch = function (payload){
     case TrackConstants.TRACKS_RECEIVED:
       resetTracks(payload.tracks);
       break;
+    case TrackConstants.TRACK_UPDATED:
+      trackUpdate(payload.track);
+      break;
   }
   TrackStore.__emitChange();
 };
 
 var resetTracks = function(tracks) {
-  _tracks = tracks;
+  tracks.forEach(function(track){
+    _tracks[track.id] = track;
+  });
+};
+
+var trackUpdate = function(track){
+  _tracks[track.id] = track;
 };
 
 TrackStore.all = function() {
-  return _tracks.slice(0);
+  var tracks = [];
+  Object.keys(_tracks).forEach(function(key){
+    tracks.push(_tracks[key]);
+  });
+  return tracks;
 };
 
 module.exports = TrackStore;

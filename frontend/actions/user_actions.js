@@ -7,6 +7,13 @@ var UserActions = {
       actionType: UserConstants.USERS_RECEIVED,
       users: users
     });
+  },
+
+  updateUser: function(user) {
+    AppDispatcher.dispatch({
+      actionType: UserConstants.USER_UPDATED,
+      user: user
+    });
   }
 };
 

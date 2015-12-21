@@ -8,6 +8,13 @@ var TrackActions = {
       actionType: TrackConstants.TRACKS_RECEIVED,
       tracks: tracks
     });
+  },
+
+  updateTrack: function(track) {
+    AppDispatcher.dispatch({
+      actionType: TrackConstants.TRACK_UPDATED,
+      track: track
+    });
   }
 };
 

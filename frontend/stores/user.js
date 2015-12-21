@@ -11,6 +11,9 @@ UserStore.__onDispatch = function(payload){
     case UserConstants.USERS_RECEIVED:
       resetUsers(payload.users);
       break;
+    case UserConstants.USER_UPDATED:
+      userUpdate(payload.user);
+      break;
   }
   UserStore.__emitChange();
 };
@@ -19,6 +22,10 @@ var resetUsers = function(users){
   users.forEach(function(user){
     _users[user.id] = user;
   });
+};
+
+var userUpdate = function(user){
+  _users[user.id] = user;
 };
 
 UserStore.all = function() {

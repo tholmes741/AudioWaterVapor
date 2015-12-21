@@ -11,7 +11,7 @@ image: 'partitura3_f3ognc.jpg'
 )
 
 Track.create(
-user_id: 1, title: "Aces High", track_url: 'assets/Aces_High.mp3',
+user_id: 2, title: "Aces High", track_url: 'assets/Aces_High.mp3',
 image: 'abstract00_v49gg5.jpg'
 )
 
@@ -21,7 +21,7 @@ image: 'abstract00_v49gg5.jpg'
 )
 
 Track.create(
-user_id: 1, title: "Tell Me", track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450460483/Lyvo_Tell_Me_b0oks9.mp3',
+user_id: 2, title: "Tell Me", track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450460483/Lyvo_Tell_Me_b0oks9.mp3',
 image: 'maxresdefault_gemqb3.jpg'
 )
 
@@ -35,4 +35,9 @@ User.create(
 username: 'tommy', email: 'example.gmail.com', password: 'password',
 avatar: 'me_ang_angelique_p2lemb.jpg',
 bio: 'This is my app and I really hope I can make it super pretty. Please enjoy some music!'
+)
+
+User.create(
+username: 'admin', email: 'example.gmail.com', password: 'password',
+bio: 'testing stuff'
 )

@@ -1,6 +1,7 @@
 var UserActions = require('../actions/user_actions.js');
 var TrackActions = require('../actions/track_actions.js');
 var SessionActions = require('../actions/session_actions.js');
+var UserActions = require('../actions/user_actions.js');
 
 var ApiUtils = {
   fetchAllUsers: function(){
@@ -16,7 +17,10 @@ var ApiUtils = {
       url: 'api/session',
       type: 'POST',
       data: {user: credentials},
-      success: SessionActions.receiveCurrentUser,
+      success: function(response){
+        SessionActions.receiveCurrentUser(response);
+        ApiUtils.fetchAllUsers();
+      }
     });
   },
 
@@ -44,7 +48,14 @@ var ApiUtils = {
       type: 'POST',
       data: {like: like},
       success: function(response){
-        console.log(response);
+        UserActions.updateUser(response);
+        var likedTrack;
+        response.tracks.forEach(function(track){
+          if(track.id === like.track_id) {
+            likedTrack = track;
+          }
+        });
+        TrackActions.updateTrack(likedTrack);
       }
     });
   },

@@ -2,7 +2,8 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
     if @like.save
-      render json: @like
+      @user = User.find_by_track_id(@like.track_id)
+      render :create
     else
       render json: {}
     end
@@ -11,7 +12,7 @@ class Api::LikesController < ApplicationController
   def destroy
     @like = Like.find_by(like_params)
     @like.destroy
-    render json: @like
+    render json: {}
   end
 
   private

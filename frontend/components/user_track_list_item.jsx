@@ -1,3 +1,4 @@
+/* global url*/
 var React = require('react');
 var PlayStore = require('../stores/play.js');
 var PlayActions = require('../actions/play_actions');
@@ -5,7 +6,7 @@ var PlayActions = require('../actions/play_actions');
 var UserTrackListItem = React.createClass({
 
   handleClick: function(){
-    PlayActions.playSong(this.props.track);
+    this.props.registerTracks(this.props.idx);
   },
 
   render: function(){

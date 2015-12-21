@@ -1,3 +1,4 @@
+/* global url */
 var React = require('react');
 var UserStore = require('../stores/user.js');
 var UserTrackList = require('./user_track_list.jsx');
@@ -48,7 +49,6 @@ var UserPage = React.createClass({
 
 
   render: function(){
-
     return (
       <div>
         {this.userPage()}

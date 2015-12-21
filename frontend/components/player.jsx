@@ -6,7 +6,6 @@ var Player = React.createClass({
   },
 
   togglePlay: function(){
-    debugger;
     if (this.refs.audio.paused) {
       this.refs.audio.play();
     } else {

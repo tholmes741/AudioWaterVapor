@@ -1,12 +1,31 @@
 /* global cloudinary CLOUDINARY_OPTIONS */
 var React = require('react');
-var SessionStore = require('../stores/session.js');
+var UserStore = require('../stores/user.js');
 var History = require('react-router').History;
 var ApiUtils = require('../utils/api_utils.js');
 var SearchBar = require('./search_bar.jsx');
 
 var Navbar = React.createClass({
   mixins: [History],
+
+  getInitialState: function(){
+    return {username: null};
+  },
+
+  componentDidMount: function(){
+    this.listener = UserStore.addListener(this.onChange);
+  },
+
+  componentWillUnmount: function(){
+    this.listener.remove();
+  },
+
+  onChange: function(){
+    var user = UserStore.find(this.props.currentUser);
+    if (user){
+      this.setState({username: user.username});
+    }
+  },
 
   profile: function(){
     this.history.pushState(null, 'users/' + this.props.currentUser);
@@ -46,7 +65,8 @@ var Navbar = React.createClass({
               data-toggle="dropdown"
               role="button"
               aria-haspopup="true"
-              aria-expanded="false">Dropdown <span className="caret"></span></a>
+              aria-expanded="false">{this.state.username}
+              <span className="caret"></span></a>
             <ul className='dropdown-menu'>
               <li onClick={this.profile}><a
                 className='nav-button'>Profile</a></li>

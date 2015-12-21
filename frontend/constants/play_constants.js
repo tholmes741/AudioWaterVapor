@@ -1,5 +1,6 @@
 var PlayConstants = {
-  PLAY: "PLAY"
+  PLAY: "PLAY",
+  NEXT_TRACK: 'NEXT_TRACK'
 
 };
 

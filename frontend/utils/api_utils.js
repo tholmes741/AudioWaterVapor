@@ -60,16 +60,25 @@ var ApiUtils = {
     });
   },
 
-  destroyLike: function(like){
+  destroyLike: function(likeId, trackId) {
     $.ajax({
-      url: 'api/likes',
+      url: 'api/likes/' + likeId,
       type: 'DELETE',
-      data: {like: like},
+      data: {},
       success: function(response){
-        console.log('deleted', response);
+        UserActions.updateUser(response);
+        var unlikedTrack;
+        response.tracks.forEach(function(track){
+          if(track.id === trackId) {
+            unlikedTrack = track;
+          }
+        });
+        TrackActions.updateTrack(unlikedTrack);
       }
     });
   }
+
+
 };
 
 

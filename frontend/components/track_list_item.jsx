@@ -3,8 +3,7 @@ var React = require('react');
 var PlayStore = require('../stores/play.js');
 var PlayActions = require('../actions/play_actions');
 var History = require('react-router').History;
-var ApiUtils = require('../utils/api_utils.js');
-var SessionStore = require('../stores/session.js');
+var Like = require('./like.jsx');
 
 var TrackListItem = React.createClass({
   mixins: [History],
@@ -17,15 +16,6 @@ var TrackListItem = React.createClass({
     this.history.pushState(null, 'users/' + this.props.track.user.id);
   },
 
-  like: function(){
-    var like = {
-      user_id: SessionStore.currentUser(),
-      track_id: this.props.track.id
-    };
-
-
-    ApiUtils.createLike(like);
-  },
 
   render: function(){
     var image = url + 'w_35,h_35/' + this.props.track.image;
@@ -44,7 +34,7 @@ var TrackListItem = React.createClass({
             src={avatar}
             className="icon"
             onClick={this.userProfile}></img>
-          <div onClick={this.like}>Likes: {this.props.track.likes}</div>
+          <Like track={this.props.track}/>
         </div>
       </li>
     );

@@ -10,9 +10,13 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @like = Like.find_by(like_params)
-    @like.destroy
-    render json: {}
+    @like = Like.find(params[:id])
+    if @like.destroy
+      @user = User.find_by_track_id(@like.track_id)
+      render :create
+    else
+      render json: {}
+    end
   end
 
   private

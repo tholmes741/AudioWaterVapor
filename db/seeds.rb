@@ -30,14 +30,15 @@ user_id: 1, title: "Can't Feel My Face (Remix)", track_url: 'http://res.cloudina
 image: 'appl1-copy-600x375_l2i5kn.png'
 )
 
+User.create(
+username: 'Demo User', email: 'example.gmail.com', password: 'password',
+avatar: 'calvin-and-hobbes-hd-wallpaper_cjyd6e.jpg',
+bio: 'This is where a nice little bio about yourself or your music would go'
+)
+
 
 User.create(
 username: 'tommy', email: 'example.gmail.com', password: 'password',
 avatar: 'me_ang_angelique_p2lemb.jpg',
 bio: 'This is my app and I really hope I can make it super pretty. Please enjoy some music!'
-)
-
-User.create(
-username: 'admin', email: 'example.gmail.com', password: 'password',
-bio: 'testing stuff'
 )

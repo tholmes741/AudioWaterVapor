@@ -3,5 +3,6 @@ json.array! @users do |user|
   json.username user.username
   json.bio user.bio
   json.avatar user.avatar
+  json.cover user.cover
   json.tracks user.tracks, partial: 'api/tracks/track', as: :track
 end

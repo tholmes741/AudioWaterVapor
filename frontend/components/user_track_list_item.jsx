@@ -2,6 +2,7 @@
 var React = require('react');
 var PlayStore = require('../stores/play.js');
 var PlayActions = require('../actions/play_actions');
+var Like = require('./like.jsx');
 
 var UserTrackListItem = React.createClass({
 
@@ -19,6 +20,7 @@ var UserTrackListItem = React.createClass({
           onClick={this.handleClick}
           src={image}
           className="icon"></img>
+        <Like track={this.props.track}/>
       </li>
     );
   }

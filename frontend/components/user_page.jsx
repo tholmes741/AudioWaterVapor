@@ -32,13 +32,20 @@ var UserPage = React.createClass({
     if (this.state.user) {
       var user = this.state.user;
       var avatar = url + 'w_150,h_180/' + user.avatar;
+      var cover = url + 'w_900,h_300/' + user.cover;
       return(
-        <div>
-          <h2>{user.username}</h2>
-          <img className='avatar'src={avatar}></img>
+        <div className='profile-container'>
+          <div >
+            <img className='cover'
+               src={cover}></img>
+            <img className='avatar'src={avatar}></img>
+            <h2 className='username'>{user.username}</h2>
+          </div>
           <div>
-            <h3>Bio</h3>
-            <p>{user.bio}</p>
+            <div className='bio col-sm-offset-2 col-sm-offset-10'>
+              <h3>Bio</h3>
+              {user.bio}
+            </div>
           </div>
           <UserTrackList tracks={user.tracks}/>
         </div>

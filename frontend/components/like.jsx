@@ -42,7 +42,7 @@ var Like = React.createClass({
 
   button: function(){
     var button;
-    if (this.state.currentUser === null){
+    if (this.state.currentUser === null || this.state.currentUser === this.props.track.user.id){
       button = <div>Likes</div>;
     } else if (this.props.track.liked) {
       button = <div onClick={this.unlike}>Unlike</div>;

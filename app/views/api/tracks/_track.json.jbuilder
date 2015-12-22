@@ -13,4 +13,5 @@ json.user do
   json.id track.user.id
   json.username track.user.username
   json.avatar track.user.avatar
+  json.cover track.user.cover
 end

@@ -3,6 +3,7 @@
    width: 600px;
    border: 1px solid black;
    border-radius: 5px;
+   background-color: white;
 }
 
 .track-list{
@@ -11,6 +12,7 @@
 
 .track-list-item{
   border: 1px solid black;
+  opacity: none;
 }
 
 .item-content {

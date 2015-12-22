@@ -20,7 +20,6 @@ var Login = React.createClass({
   },
 
   componentWillMount: function(){
-    console.log(SessionStore.currentUser());
     if(SessionStore.currentUser()) {
       this.props.history.goBack();
     }
@@ -48,6 +47,15 @@ var Login = React.createClass({
     ApiUtils.createSession(credentials);
   },
 
+  demoUser: function(e){
+    e.preventDefault();
+    var credentials = {
+      username: 'Demo User',
+      password: 'password'
+    };
+    ApiUtils.createSession(credentials);
+  },
+
   render: function() {
     return (
       <div className="form">
@@ -71,7 +79,12 @@ var Login = React.createClass({
               type='password'
               valueLink={this.linkState('password')}/>
           </div>
-
+          <div className='demo-text'>
+            Don't have an account? Login as a demo user</div>
+          <button
+            className='btn btn-defualt demo-btn'
+            onClick={this.demoUser}>Sign in as Demo User</button>
+          <br></br>
           <input className="btn btn-default" type="submit" value="Log In"/>
         </form>
       </div>

@@ -18,16 +18,32 @@
 
 
 
+body
+{
+  background: url("http://res.cloudinary.com/tholmes741/image/upload/v1450743767/streets_city_urban_city_lights_1280x800_wallpaper_www.wall321.com_19_yocik6.jpg") fixed;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  color: rgb(60,60,60);
+}
+
 .form{
   margin: auto;
   margin-top: 100px;
   width: 400px;
+  padding-bottom: 10px;
   border: 2px solid black;
   border-radius: 10px;
+  background-color: white;
 }
 
 .form h1 {
   text-align: center;
+}
+
+.form-btn {
+  position: relative;
+  margin-left: 135px;
 }
 
 .form .btn {
@@ -58,4 +74,12 @@ label {
    content: "";
    display: block;
    clear: both;
+ }
+
+ div.demo-text {
+   text-align: center;
+ }
+
+ button.demo-btn {
+   text-align: center;
  }

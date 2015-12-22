@@ -18,8 +18,7 @@ var UserTrackList = React.createClass({
         registerTracks={that.registerTracks}/>);
     });
     return(
-      <div className='track-list-container'>
-        Tracks
+      <div className='user-track-list-container'>
         <ul className='track-list'>
           {tracks}
         </ul>

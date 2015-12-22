@@ -93,7 +93,7 @@ var SignUp = React.createClass({
           <input
             type="submit"
             value="Create Account"
-            className="btn btn-default form-btn"/>
+            className="btn btn-default sign-up-btn"/>
         </form>
       </div>
     );

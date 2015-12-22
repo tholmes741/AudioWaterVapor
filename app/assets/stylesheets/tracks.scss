@@ -18,3 +18,13 @@
 .item-content {
   display: inline-block;;
 }
+
+.like:hover {
+  cursor: pointer;
+}
+
+.not-liked {
+  filter: grayscale(.5);
+  -webkit-filter: grayscale(.5);
+
+}

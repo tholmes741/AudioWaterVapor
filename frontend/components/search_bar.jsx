@@ -7,7 +7,7 @@ var SearchBar = React.createClass({
         <div className="form-group search">
           <input
             type="text"
-            className="form-control search-bar"
+            className="search-bar"
             placeholder="Search by artist or track"></input>
         </div>
       </form>

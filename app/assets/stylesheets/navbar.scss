@@ -4,15 +4,9 @@
 
 .search-bar {
   display: inline-block;
-  width: 300px;
-}
-
-.search-btn {
-  display: inline-block;
-}
-
-
-
-div.search {
-  width: 400px;
+  width: 250px;
+  height: 30px;
+  margin-top: 1px;
+  border: 1px solid black;
+  border-radius: 5px;
 }

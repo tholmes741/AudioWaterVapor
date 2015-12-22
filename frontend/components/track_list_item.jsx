@@ -25,6 +25,7 @@ var TrackListItem = React.createClass({
         <div className='item-content'>
           {this.props.track.title}
           <br></br>
+          Play
           <img
             onClick={this.handleClick}
             src={image}

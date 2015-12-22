@@ -31,11 +31,11 @@ var UserPage = React.createClass({
   userPage: function(){
     if (this.state.user) {
       var user = this.state.user;
-      var avatar = url + 'w_150,h_180/' + user.avatar;
-      var cover = url + 'w_900,h_300/' + user.cover;
+      var avatar = url + 'w_180,h_200/' + user.avatar;
+      var cover = url + 'w_1000,h_400/' + user.cover;
       return(
         <div className='profile-container'>
-          <div >
+          <div>
             <img className='cover'
                src={cover}></img>
             <img className='avatar'src={avatar}></img>

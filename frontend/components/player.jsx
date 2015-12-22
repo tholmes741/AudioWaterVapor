@@ -35,7 +35,6 @@ var Player = React.createClass({
           ref="audio"
           src={this.props.track.trackUrl}
           autoPlay controls></audio>
-        <div onClick={this.togglePlay}>Play/pause</div>
       </div>
     );
   }

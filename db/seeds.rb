@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Track.create(
-user_id: 1, title: "testtrack", track_url: 'assets/Fix_You-Yara.m4a',
+user_id: 1, title: "testtrack", track_url: 'assets/3am_Apologies.mp3',
 image: 'partitura3_f3ognc.jpg'
 )
 
@@ -30,15 +30,40 @@ user_id: 1, title: "Can't Feel My Face (Remix)", track_url: 'http://res.cloudina
 image: 'appl1-copy-600x375_l2i5kn.png'
 )
 
+Track.create(
+user_id: 3, title: 'Gold Dust', track_url: 'assets/Galantis_Gold_Dust.mp3',
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+)
+Track.create(
+user_id: 3, title: 'You', track_url: 'assets/Galantis_You.mp3',
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+)
+Track.create(
+user_id: 3, title: 'Peanut Butter Jelly', track_url: 'assets/Galantis_Peanut_Butter_Jelly.mp3',
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+)
+Track.create(
+user_id: 3, title: 'Firebird', track_url: 'assets/Galantis_Firebird.mp3',
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+)
+
 User.create(
 username: 'Demo User', email: 'example.gmail.com', password: 'password',
 avatar: 'calvin-and-hobbes-hd-wallpaper_cjyd6e.jpg',
-bio: 'This is where a nice little bio about yourself or your music would go'
+bio: 'This is where a nice little bio about yourself or your music would go',
+cover: 'CH860417_JPG_ancnoa.jpg'
 )
 
 
 User.create(
-username: 'tommy', email: 'example.gmail.com', password: 'password',
+username: 'Tommy', email: 'example.gmail.com', password: 'password',
 avatar: 'me_ang_angelique_p2lemb.jpg',
 bio: 'This is my app and I really hope I can make it super pretty. Please enjoy some music!'
+)
+
+User.create(
+username: "Galantis", email: 'galantis@gmail.com', password: 'secret',
+avatar: 'galantis_14_f3zpwq.jpg',
+bio: 'Yo we are GALANTIS. We made some super sweet beats so make sure that you check them out and throw them a like.',
+cover: 'galantis-peanut-butter-and-jelly_ld7may.jpg'
 )

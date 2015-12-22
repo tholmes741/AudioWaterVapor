@@ -1,14 +1,19 @@
 .profile-container {
-  width:900px;
+  width: 1000px;
   margin: 0 auto;
+  margin-top: 60px;
   background-color: #eee;
   z-index: -1;
+  margin-bottom: 30px;
+  padding-bottom: 60px;
 }
+
 
 .bio {
   position: relative;
-  margin-top: 50px;
-
+  margin-top: 100px;
+  border-left: 2px solid black;
+  padding-left: 20px;
 }
 
 img.cover {
@@ -19,16 +24,16 @@ img.cover {
 img.avatar {
   position: relative;
   margin-left: 20px;
-  margin-top: 106px;
+  margin-top: 215px;
 
 }
 
 h2.username {
   position: relative;
   color: white;
-  margin-top: -28px;
-  margin-left: 182px;
-
+  margin-top: -55px;
+  margin-left: 215px;
+  text-shadow: 2px 2px 10px black;
 }
 
 .track-list-container{

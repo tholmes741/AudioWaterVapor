@@ -65,16 +65,18 @@ var Navbar = React.createClass({
               data-toggle="dropdown"
               role="button"
               aria-haspopup="true"
-              aria-expanded="false">{this.state.username}
+              aria-expanded="false"
+              id='nav-btn'>{this.state.username}
               <span className="caret"></span></a>
             <ul className='dropdown-menu'>
               <li onClick={this.profile}><a
-                className='nav-button'>Profile</a></li>
+                className='nav-button' id='nav-dd'>Profile</a></li>
               <li onClick={this.upload}><a
-                className='nav-button'>Upload</a></li>
-              <li><a href='#'>Edit Profile</a></li>
+                className='nav-button' id='nav-dd'>Upload</a></li>
+              <li><a href='#' id='nav-dd'>Edit Profile</a></li>
               <li className="divider"></li>
               <li onClick={this.logout}><a
+                id='nav-dd'
                 className='nav-button'>Logout</a></li>
             </ul>
           </li>
@@ -83,19 +85,34 @@ var Navbar = React.createClass({
     } else {
       userButtons = (
         <ul className="nav navbar-nav pull-right">
-          <li onClick={this.signUp}><a className='nav-button'>Sign Up</a></li>
-          <li onClick={this.login}><a className='nav-button'>Log In</a></li>
+          <li
+            onClick={this.signUp}>
+            <a className='nav-button' id='nav-btn'>Sign Up</a></li>
+          <li
+            onClick={this.login}>
+            <a className='nav-button' id='nav-btn'>Log In</a></li>
         </ul>
       );
     }
     return (
       <nav className="navbar navbar-inverse">
         <div className="container-fluid">
-          <ul className='nav navbar-nav'>
-            <li ><a className='nav-button'onClick={this.tracks}>Track</a></li>
-          </ul>
-          <SearchBar />
-          {userButtons}
+          <div className="navbar-header">
+            <a className="navbar-brand" href="#">
+              <img alt="Brand" className='logo_color' src="assets/logo_color.png"></img>
+              <img alt="Brand" className='logo_white' src="assets/logo_white.png"></img>
+            </a>
+          </div>
+          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul className='nav navbar-nav'>
+              <li ><a
+                className='nav-button'
+                onClick={this.tracks}
+                id='nav-btn'>Track</a></li>
+            </ul>
+            <SearchBar />
+            {userButtons}
+          </div>
         </div>
       </nav>
 

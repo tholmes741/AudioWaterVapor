@@ -1,6 +1,28 @@
-.nav-button:hover {
+#nav-btn:hover {
+  cursor: pointer;
+  color: #ffcc00;
+}
+
+#nav-btn {
+  transition-duration: 1s;
+}
+
+#nav-dd:hover {
+  background-color: #000;
+  color: #ffcc00;
   cursor: pointer;
 }
+
+#nav-dd {
+  transition-duration: .5s;
+}
+
+nav.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
 
 .search-bar {
   display: inline-block;
@@ -9,4 +31,27 @@
   margin-top: 1px;
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.logo_color {
+  height: 40px;
+  width: 77px;
+  margin-top: -10px;
+  margin-right: -12px;
+  margin-left: -6px;
+}
+
+.logo_white {
+  position: relative;
+  height: 40px;
+  width: 77px;
+  margin-top: -40px;
+  margin-right: -12px;
+  margin-left: -6px;
+  transition-duration: 1s;
+}
+
+.logo_white:hover {
+  cursor: pointer;
+  opacity: 0;
 }

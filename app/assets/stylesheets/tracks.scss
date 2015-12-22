@@ -38,7 +38,6 @@
 }
 
 .not-liked {
-  filter: grayscale(.5);
-  -webkit-filter: grayscale(.5);
-
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
 }

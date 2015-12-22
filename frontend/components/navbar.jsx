@@ -40,11 +40,7 @@ var Navbar = React.createClass({
   },
 
   upload: function(){
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
-      if(!error){
-        debugger;
-      }
-    }.bind(this));
+    alert('This has not been completed yet');
   },
 
   logout: function(){
@@ -53,7 +49,7 @@ var Navbar = React.createClass({
   },
 
   tracks: function(){
-    this.history.pushState(null, '/');
+    this.history.pushState(null, '/tracks');
   },
 
   edit: function(){

@@ -32,7 +32,7 @@ var UserPage = React.createClass({
     if (this.state.user) {
       var user = this.state.user;
       var avatar = url + 'w_180,h_200/' + user.avatar;
-      var cover = url + 'w_1000,h_400/' + user.cover;
+      var cover = url + 'w_996,h_400/' + user.cover;
       return(
         <div className='profile-container'>
           <div>

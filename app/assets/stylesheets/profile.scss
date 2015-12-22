@@ -6,6 +6,7 @@
   z-index: -1;
   margin-bottom: 30px;
   padding-bottom: 60px;
+  border: 2px solid black;
 }
 
 
@@ -19,13 +20,14 @@
 img.cover {
   text-align: center;
   position: absolute;
+  border-bottom: 1px solid black;
 }
 
 img.avatar {
   position: relative;
   margin-left: 20px;
   margin-top: 215px;
-
+  border-radius: 10px;
 }
 
 h2.username {

@@ -42,17 +42,22 @@ var Navbar = React.createClass({
   upload: function(){
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
-        console.log(results);
+        debugger;
       }
     }.bind(this));
   },
 
   logout: function(){
     ApiUtils.destroySession();
+    this.history.pushState(null, '/');
   },
 
   tracks: function(){
     this.history.pushState(null, '/');
+  },
+
+  edit: function(){
+    this.history.pushState(null, '/edit');
   },
 
   render: function() {
@@ -73,7 +78,8 @@ var Navbar = React.createClass({
                 className='nav-button' id='nav-dd'>Profile</a></li>
               <li onClick={this.upload}><a
                 className='nav-button' id='nav-dd'>Upload</a></li>
-              <li><a href='#' id='nav-dd'>Edit Profile</a></li>
+              <li onClick={this.edit}><a
+                className='nav-button' id='nav-dd'>Edit Profile</a></li>
               <li className="divider"></li>
               <li onClick={this.logout}><a
                 id='nav-dd'

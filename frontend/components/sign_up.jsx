@@ -20,9 +20,7 @@ var SignUp = React.createClass({
   },
 
   componentWillMount: function(){
-    console.log('outside');
     if(SessionStore.currentUser()) {
-      console.log('here');
       this.props.history.goBack();
     }
   },
@@ -32,7 +30,6 @@ var SignUp = React.createClass({
   },
 
   onChange: function(){
-    console.log(SessionStore.errors().length);
     if (SessionStore.errors().length > 0){
       this.setState({errors: SessionStore.errors().join('. ')});
     } else {

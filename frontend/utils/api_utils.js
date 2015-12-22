@@ -42,6 +42,21 @@ var ApiUtils = {
     });
   },
 
+  updateUser: function(user, id, cb) {
+    $.ajax({
+      url: 'api/users/' + id,
+      type: 'PATCH',
+      data: {user: user},
+      success: function(response) {
+        console.log('yay');
+        UserActions.updateUser(response);
+        cb && cb();
+      },
+      error: function(response) {
+      }
+    });
+  },
+
   createLike: function(like){
     $.ajax({
       url: 'api/likes',

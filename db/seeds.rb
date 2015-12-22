@@ -51,7 +51,7 @@ User.create(
 username: 'Demo User', email: 'example.gmail.com', password: 'password',
 avatar: 'calvin-and-hobbes-hd-wallpaper_cjyd6e.jpg',
 bio: 'This is where a nice little bio about yourself or your music would go',
-cover: 'CH860417_JPG_ancnoa.jpg'
+cover: 'dziubd87z9mx5nnlqsoo.jpg'
 )
 
 

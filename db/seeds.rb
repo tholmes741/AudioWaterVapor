@@ -35,7 +35,7 @@ user_id: 3, title: 'Gold Dust', track_url: 'assets/Galantis_Gold_Dust.mp3',
 image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
 )
 Track.create(
-user_id: 3, title: 'You', track_url: 'assets/Galantis_You.mp3',
+user_id: 3, title: 'You', track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817628/Galantis_You_fr3eqh.mp3',
 image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
 )
 Track.create(

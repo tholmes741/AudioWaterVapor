@@ -2,7 +2,7 @@
 
 [Heroku link][heroku] **NB:** This should be a link to your production site
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://audio-water-vapor.herokuapp.com
 
 ## Minimum Viable Product
 

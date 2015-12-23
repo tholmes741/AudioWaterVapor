@@ -14,8 +14,14 @@ UserStore.__onDispatch = function(payload){
     case UserConstants.USER_UPDATED:
       userUpdate(payload.user);
       break;
+    case UserConstants.NEW_USER_RECEIVED:
+      addUser(payload.user);
   }
   UserStore.__emitChange();
+};
+
+var addUser = function(user){
+  _users[user.id] = user;
 };
 
 var resetUsers = function(users){

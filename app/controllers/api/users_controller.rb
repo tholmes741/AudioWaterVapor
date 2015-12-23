@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       sign_in(@user)
-      render :create
+      render :show
     else
       render json: {errors: @user.errors.full_messages}
     end

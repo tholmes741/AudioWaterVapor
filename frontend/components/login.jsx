@@ -79,16 +79,16 @@ var Login = React.createClass({
               type='password'
               valueLink={this.linkState('password')}/>
           </div>
-          <div className='demo-text'>
-            Don't have an account? Login as a demo user.</div>
-          <button
-            className='btn btn-defualt demo-btn'
-            onClick={this.demoUser}>Sign in as Demo User</button>
           <br></br>
           <input
             className="btn btn-default login-btn"
             type="submit"
             value="Log In"/>
+          <div className='demo-text'>
+            Don't have an account? Login as a demo user.</div>
+          <button
+            className='btn btn-defualt demo-btn'
+            onClick={this.demoUser}>Sign in as Demo User</button>
         </form>
       </div>
     );

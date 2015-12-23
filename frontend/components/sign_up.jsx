@@ -37,6 +37,16 @@ var SignUp = React.createClass({
     }
   },
 
+  signIn: function(user){
+
+    var credentials = {
+      username: this.state.username,
+      password: this.state.password
+    };
+
+    ApiUtils.createSession(credentials);
+  },
+
   handleSubmit: function(e){
     e.preventDefault();
     var user = {
@@ -45,7 +55,7 @@ var SignUp = React.createClass({
       password: this.state.password
     };
 
-    ApiUtils.createUser(user);
+    ApiUtils.createUser(user, this.signIn);
   },
 
   render: function() {

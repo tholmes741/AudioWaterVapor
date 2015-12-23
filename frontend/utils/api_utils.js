@@ -33,12 +33,15 @@ var ApiUtils = {
     });
   },
 
-  createUser: function(user){
+  createUser: function(user, cb){
     $.ajax({
       url: 'api/users',
       type: 'POST',
       data: {user: user},
-      success: SessionActions.receiveCurrentUser
+      success: function(response) {
+        UserActions.receiveNewUser(response);
+        cb();
+      }
     });
   },
 

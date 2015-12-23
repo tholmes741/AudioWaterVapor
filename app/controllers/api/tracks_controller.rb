@@ -19,6 +19,16 @@ class Api::TracksController < ApplicationController
     end
   end
 
+  def update
+    @track = Track.find(params[:id])
+    if @track.update(play_count: @track.play_count + 1)
+      @user = User.find(@track.user_id)
+      render :create
+    else
+      render json: {}
+    end
+  end 
+
   private
   def track_params
     params.require(:track).permit(:title, :user_id, :track_url, :image)

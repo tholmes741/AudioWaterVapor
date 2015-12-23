@@ -106,6 +106,15 @@ var ApiUtils = {
         cb();
       }
     });
+  },
+
+  updateTrackCounter: function(trackId){
+    $.ajax({
+      url: '/api/tracks/' + trackId,
+      type: 'PATCH',
+      data: {},
+      success: UserActions.updateUser
+    });
   }
 };
 

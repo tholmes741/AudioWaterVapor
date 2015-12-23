@@ -1,14 +1,17 @@
 var React = require('react');
 var PlayActions = require('../actions/play_actions');
+var ApiUtils = require('../utils/api_utils.js');
 
 var Player = React.createClass({
 
   componentDidMount: function(){
     this.refs.audio.addEventListener("ended", this.ended);
+    this.refs.audio.addEventListener("loadeddata", this.played);
    },
 
    componentWillUnmount: function (){
      this.refs.audio.removeEventListener("ended", this.ended);
+     this.refs.audio.removeEventListener("loadeddata", this.played);
    },
 
   componentWillReceiveProps: function(){
@@ -20,6 +23,10 @@ var Player = React.createClass({
     } else {
       this.refs.audio.pause();
     }
+  },
+
+  played: function(){ 
+    ApiUtils.updateTrackCounter(this.props.track.id);
   },
 
   ended: function(){

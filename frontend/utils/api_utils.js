@@ -1,6 +1,7 @@
 var UserActions = require('../actions/user_actions.js');
 var TrackActions = require('../actions/track_actions.js');
 var SessionActions = require('../actions/session_actions.js');
+var SearchActions = require('../actions/search_actions.js');
 
 
 var ApiUtils = {
@@ -51,7 +52,6 @@ var ApiUtils = {
       type: 'PATCH',
       data: {user: user},
       success: function(response) {
-        console.log('yay');
         UserActions.updateUser(response);
         cb && cb();
       },
@@ -123,6 +123,15 @@ var ApiUtils = {
         });
         TrackActions.updateTrack(playedTrack);
       }
+    });
+  },
+
+  search: function(search){
+    $.ajax({
+      url: 'api/search',
+      type: 'GET',
+      data: {},
+      success: SearchActions.search
     });
   }
 };

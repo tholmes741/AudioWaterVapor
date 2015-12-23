@@ -4,6 +4,7 @@ var SessionStore = require('../stores/session.js');
 var PlayStore = require('../stores/play.js');
 var Player = require('./player.jsx');
 var ApiUtils = require('../utils/api_utils.js');
+var SearchResults = require('./search_results.jsx');
 
 var App = React.createClass({
   getInitialState: function(){
@@ -38,6 +39,7 @@ var App = React.createClass({
         <div className="nav">
           <Navbar currentUser={this.state.currentUser} />
         </div>
+        <SearchResults />
         <div>
           {this.props.children}
         </div>

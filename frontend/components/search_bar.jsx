@@ -1,5 +1,6 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var ApiUtils = require('../utils/api_utils.js');
 
 
 var SearchBar = React.createClass({
@@ -13,30 +14,28 @@ var SearchBar = React.createClass({
     e.preventDefault();
   },
 
-  matches: function (){
-    var matches = [];
-    if (this.state.search === '') {
-      return;
-    }
+  onChange: function(e){
+    this.setState({search: e.currentTarget.value});
+    ApiUtils.search(this.state.search);
   },
-
-
 
   render: function(){
     return (
-      <form
-        className="navbar-form navbar-left"
-        role="search"
-        onSubmit={this.handleSubmit}>
-        <div className="form-group search">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search by artist or track"
-            valueLink={this.linkState('search')}></input>
-        </div>
-        {this.matches()}
-      </form>
+      <div>
+        <form
+          className="navbar-form navbar-left"
+          role="search"
+          onSubmit={this.handleSubmit}>
+          <div className="form-group search">
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search by artist or track"
+              onChange={this.onChange}
+              valeu={this.state.search}></input>
+          </div>
+        </form>
+      </div>
     );
   }
 });

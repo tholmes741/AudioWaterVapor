@@ -7,6 +7,7 @@ var Login = require('./components/login.jsx');
 var UserPage = require('./components/user_page.jsx');
 var Edit = require('./components/edit.jsx');
 var Splash = require('./components/splash.jsx');
+var Upload = require('./components/upload.jsx');
 
 var Router = require('react-router').Router;
 var Route = require('react-router').Route;
@@ -20,6 +21,7 @@ var route = (
     <Route path='/signup' component={SignUp} />
     <Route path='/login' component={Login} />
     <Route path='/edit' component={Edit} />
+    <Route path='/upload' component={Upload} />
   </Route>
 );
 

@@ -32,15 +32,15 @@ var Navbar = React.createClass({
   },
 
   signUp: function(){
-    this.history.pushState(null, 'signup');
+    this.history.pushState(null, '/signup');
   },
 
   login: function(){
-    this.history.pushState(null, 'login');
+    this.history.pushState(null, '/login');
   },
 
   upload: function(){
-    alert('This has not been completed yet');
+    this.history.pushState(null, '/upload');
   },
 
   logout: function(){

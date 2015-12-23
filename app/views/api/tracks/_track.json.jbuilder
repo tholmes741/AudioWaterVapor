@@ -2,6 +2,7 @@ json.id track.id
 json.title track.title
 json.trackUrl track.track_url
 json.image track.image
+json.playCount track.play_count
 if current_user
   json.liked track.has_been_liked?(current_user.id)
 else

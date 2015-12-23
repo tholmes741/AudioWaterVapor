@@ -1,7 +1,7 @@
 var UserActions = require('../actions/user_actions.js');
 var TrackActions = require('../actions/track_actions.js');
 var SessionActions = require('../actions/session_actions.js');
-var UserActions = require('../actions/user_actions.js');
+
 
 var ApiUtils = {
   fetchAllUsers: function(){
@@ -94,9 +94,19 @@ var ApiUtils = {
         TrackActions.updateTrack(unlikedTrack);
       }
     });
+  },
+
+  createTrack: function(track, cb) {
+    $.ajax({
+      url: 'api/tracks',
+      type: 'POST',
+      data: {track: track},
+      success: function(response){
+        UserActions.updateUser(response);
+        cb();
+      }
+    });
   }
-
-
 };
 
 

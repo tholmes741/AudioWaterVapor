@@ -32,7 +32,7 @@ var UserPage = React.createClass({
     if (this.state.user) {
       var user = this.state.user;
       var avatar = url + 'w_180,h_200/' + user.avatar;
-      var cover = url + 'w_996,h_400/' + user.cover;
+      var cover = url + 'w_1196,h_400/' + user.cover;
       return(
         <div className='profile-container'>
           <div>
@@ -42,9 +42,14 @@ var UserPage = React.createClass({
             <h2 className='username'>{user.username}</h2>
           </div>
           <div>
-            <div className='bio col-sm-offset-2 col-sm-offset-10'>
+            <div className='bio  col-sm-offset-10'>
               <h3>Bio</h3>
               {user.bio}
+            </div>
+          </div>
+          <div>
+            <div className='following col-sm-2'>
+              <h3>Following</h3>
             </div>
           </div>
           <UserTrackList tracks={user.tracks}/>

@@ -113,7 +113,16 @@ var ApiUtils = {
       url: '/api/tracks/' + trackId,
       type: 'PATCH',
       data: {},
-      success: UserActions.updateUser
+      success: function(response) {
+        UserActions.updateUser(response);
+        var playedTrack;
+        response.tracks.forEach(function(track){
+          if(track.id === trackId) {
+            playedTrack = track;
+          }
+        });
+        TrackActions.updateTrack(playedTrack);
+      }
     });
   }
 };

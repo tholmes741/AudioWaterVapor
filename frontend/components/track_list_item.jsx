@@ -36,6 +36,7 @@ var TrackListItem = React.createClass({
             className="icon"
             onClick={this.userProfile}></img>
           <Like track={this.props.track}/>
+          <div>Play Counter: {this.props.track.playCount}</div>
         </div>
       </li>
     );

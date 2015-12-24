@@ -57,3 +57,12 @@ button.btn.follow-btn:hover {
   color: white;
   background-color: #0099cc;
 }
+
+.following-container {
+  list-style: none;
+}
+
+li.following {
+  background-color: white;
+  border: 1px solid black;
+}

@@ -7,12 +7,16 @@ class User < ActiveRecord::Base
 
   has_many :tracks
   has_many :likes
+  has_many :follows,
+    foreign_key: :follower,
+    primary_key: :id,
+    class_name: 'Follow'
 
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_bio, :ensure_cover
 
   def ensure_cover
     self.cover ||= "gerenic_cover_txh0tf.png"
-  end 
+  end
 
   def ensure_bio
     self.bio ||= "I need to make my bio."

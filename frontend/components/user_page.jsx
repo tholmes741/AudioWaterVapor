@@ -20,9 +20,13 @@ var UserPage = React.createClass({
     this.listener.remove();
   },
 
-  componentWillReceiveProps: function(){
-    this.setState({user: UserStore.find(parseInt(this.props.params.userId))});
+  componentWillReceiveProps: function(newProps){
+    this.setState({user: UserStore.find(parseInt(newProps.params.userId))});
   },
+
+  // shouldComponentUpdate: function(nextProps, nextState){
+  //   return true;
+  // },
 
   onChange: function(){
     this.setState({user: UserStore.find(parseInt(this.props.params.userId))});

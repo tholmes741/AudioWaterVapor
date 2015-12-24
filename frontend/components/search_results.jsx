@@ -30,8 +30,7 @@ var SearchResults = React.createClass({
   },
 
   clicked: function(e) {
-    debugger;
-    var userId = e.target.id;
+    var userId = e.currentTarget.id;
     this.history.pushState(null, '/users/' + userId);
   },
 
@@ -42,29 +41,29 @@ var SearchResults = React.createClass({
     this.state.users.forEach(function(user){
       avatar = url + 'w_40,h_40/' + user.avatar;
       results.push(
-        <li className='result user-result' id={user.id} key={counter} >
+        <li className='result user-result' id={user.id} key={counter} onClick={this.clicked}>
           <img src={avatar}></img>
           {user.username}</li>
       );
       counter +=1;
-    });
+    }.bind(this));
 
     var image;
     this.state.tracks.forEach(function(track){
       image = url + 'w_40,h_40/' + track.image;
       results.push(
-        <li className='result track-result' id={track.userId} key={counter}>
+        <li className='result track-result' id={track.userId} key={counter} onClick={this.clicked}>
           <img src={image}></img>
           {track.title}</li>
       );
       counter += 1;
-    });
+    }.bind(this));
     return results;
   },
 
   render: function(){
     return (
-      <ul className='search-result-container' onClick={this.clicked}>
+      <ul className='search-result-container'>
         {this.matches()}
       </ul>
     );

@@ -14,6 +14,9 @@ SearchStore.__onDispatch = function(payload){
       _tracks = payload.tracks;
       _users = payload.users;
       break;
+    case SearchConstants.EMPTY:
+      _emptyResults();
+      break;
   }
   SearchStore.__emitChange();
 };
@@ -24,6 +27,11 @@ SearchStore.users = function(){
 
 SearchStore.tracks = function(){
   return _tracks.slice(0);
+};
+
+var _emptyResults = function() {
+  _tracks = [];
+  _users = [];
 };
 
 

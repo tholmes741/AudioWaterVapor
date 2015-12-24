@@ -55,3 +55,20 @@ nav.navbar {
   cursor: pointer;
   opacity: 0;
 }
+
+.search-result-container {
+  margin-left: 171px;
+  width: 248px;
+  position: fixed;
+  z-index: 100;
+  margin-top: 40px;
+  list-style: none;
+  background-color: white;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.result {
+  border-bottom: 1px solid black;
+  height: 40px;
+}

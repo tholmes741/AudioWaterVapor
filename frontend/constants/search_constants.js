@@ -1,5 +1,6 @@
 var SearchConstants = {
-  SEARCH: 'SEARCH'
+  SEARCH: 'SEARCH',
+  EMPTY: 'EMPTY'
 };
 
 

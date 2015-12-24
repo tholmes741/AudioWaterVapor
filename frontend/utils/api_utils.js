@@ -130,7 +130,7 @@ var ApiUtils = {
     $.ajax({
       url: 'api/search',
       type: 'GET',
-      data: {},
+      data: {search: search},
       success: SearchActions.search
     });
   }

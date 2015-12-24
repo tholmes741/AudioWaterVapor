@@ -1,6 +1,7 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtils = require('../utils/api_utils.js');
+var SearchActions = require('../actions/search_actions.js');
 
 
 var SearchBar = React.createClass({
@@ -15,8 +16,15 @@ var SearchBar = React.createClass({
   },
 
   onChange: function(e){
-    this.setState({search: e.currentTarget.value});
-    ApiUtils.search(this.state.search);
+    this.setState({search: e.currentTarget.value}, this.submitChange);
+  },
+
+  submitChange: function(){
+    if (this.state.search === '') {
+      SearchActions.empty();
+    } else {
+      ApiUtils.search(this.state.search);
+    }
   },
 
   render: function(){

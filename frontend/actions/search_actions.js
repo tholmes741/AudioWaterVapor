@@ -8,6 +8,12 @@ var SearchActions = {
       users: results.users,
       tracks: results.tracks
     });
+  },
+
+  empty: function() {
+    AppDispatcher.dispatch({
+      actionType: SearchConstants.EMPTY
+    });
   }
 
 };

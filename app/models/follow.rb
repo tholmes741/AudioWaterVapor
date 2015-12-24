@@ -5,4 +5,5 @@ class Follow < ActiveRecord::Base
     foreign_key: :follower,
     primary_key: :id,
     class_name: 'User'
+
 end

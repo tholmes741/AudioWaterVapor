@@ -10,6 +10,13 @@ class Api::FollowsController < ApplicationController
   end
 
   def destroy
+    @follow = Follow.find_by(follower: current_user.id, followee: params[:followee])
+    if @follow.destroy
+      @user = User.find(@follow.follower)
+      render :create
+    else
+      render json: {}
+    end
   end
 
   private

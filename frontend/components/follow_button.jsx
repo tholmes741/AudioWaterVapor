@@ -3,7 +3,7 @@ var SessionStore = require('../stores/session.js');
 var UserStore = require('../stores/user.js');
 var ApiUtils = require('../utils/api_utils.js');
 
-var Follow = React.createClass({
+var FollowButton = React.createClass({
   getInitialState: function(){
     var currentUser = UserStore.find(SessionStore.currentUser());
     var follows = [];
@@ -20,10 +20,12 @@ var Follow = React.createClass({
 
   componentDidMount: function(){
     this.listener = SessionStore.addListener(this.onChange);
+    this.users = UserStore.addListener(this.onChange);
   },
 
   componentWillUnmount: function(){
     this.listener.remove();
+    this.users.remove();
   },
 
   onChange: function(){
@@ -46,7 +48,11 @@ var Follow = React.createClass({
 
   unfollow: function(e){
     e.preventDefault();
-
+    var follow = {
+      follower: this.state.currentUser.id,
+      followee: this.props.userId
+    };
+    ApiUtils.destroyFollow(follow);
   },
 
   button: function(){
@@ -79,4 +85,4 @@ var Follow = React.createClass({
   }
 });
 
-module.exports = Follow;
+module.exports = FollowButton;

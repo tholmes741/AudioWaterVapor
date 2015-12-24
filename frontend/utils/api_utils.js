@@ -98,15 +98,20 @@ var ApiUtils = {
 
   createFollow: function(follow){
     $.ajax({
-      url: 'api/follows',
+      url: 'api/follow',
       type: 'POST',
       data: {follow: follow},
       success: UserActions.updateUser
     });
   },
 
-  destroyFollow: function(){
-
+  destroyFollow: function(follow){
+    $.ajax({
+      url: 'api/follow',
+      type: 'DELETE',
+      data: {follower: follow.follower, followee: follow.followee},
+      success: UserActions.updateUser
+    });
   },
 
   createTrack: function(track, cb) {

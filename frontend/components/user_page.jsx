@@ -3,7 +3,7 @@ var React = require('react');
 var UserStore = require('../stores/user.js');
 var UserTrackList = require('./user_track_list.jsx');
 var ApiUtils = require('../utils/api_utils.js');
-var Follow = require('./follow.jsx');
+var FollowButton = require('./follow_button.jsx');
 
 var UserPage = React.createClass({
   getInitialState: function(){
@@ -58,7 +58,7 @@ var UserPage = React.createClass({
             </div>
           </div>
           <UserTrackList tracks={user.tracks}/>
-          <Follow userId={this.state.user.id} />
+          <FollowButton userId={this.state.user.id} />
         </div>
       );
     }

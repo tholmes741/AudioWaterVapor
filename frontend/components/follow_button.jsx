@@ -63,12 +63,12 @@ var FollowButton = React.createClass({
       button = <div></div>;
     } else if (this.state.follows.indexOf(this.props.userId) > -1) {
       button = (
-        <button className='btn follow-btn'
+        <button className='btn follow-btn col-sm-offset-10'
           onClick={this.unfollow}>Unfollow</button>);
     } else {
       button = (
         <button
-          className='btn follow-btn'
+          className='btn follow-btn col-sm-offset-10'
           onClick={this.follow}>Follow</button>);
     }
 

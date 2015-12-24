@@ -45,3 +45,15 @@ h2.username {
 .track-list-item {
   text-align: left;
 }
+
+button.btn.follow-btn {
+  top: 407px;
+  position: absolute;
+  border: 1px solid black;
+  background-color: #eee;
+}
+
+button.btn.follow-btn:hover {
+  color: white;
+  background-color: #0099cc;
+}

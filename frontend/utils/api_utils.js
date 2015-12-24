@@ -96,6 +96,19 @@ var ApiUtils = {
     });
   },
 
+  createFollow: function(follow){
+    $.ajax({
+      url: 'api/follows',
+      type: 'POST',
+      data: {follow: follow},
+      success: UserActions.updateUser
+    });
+  },
+
+  destroyFollow: function(){
+
+  },
+
   createTrack: function(track, cb) {
     $.ajax({
       url: 'api/tracks',

@@ -5,3 +5,4 @@ json.bio @user.bio
 json.avatar @user.avatar
 json.cover @user.cover
 json.tracks @user.tracks, partial: 'api/tracks/track', as: :track
+json.follows @user.follows, partial: 'api/follows/follow', as: :follow

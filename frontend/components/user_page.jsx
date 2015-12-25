@@ -37,6 +37,14 @@ var UserPage = React.createClass({
   userPage: function(){
     if (this.state.user) {
       var user = this.state.user;
+      var tracks = [];
+      var ids = {};
+      user.tracks.forEach(function(track){
+        ids[track.id] = track;
+      });
+      Object.keys(ids).sort().forEach(function(id){
+        tracks.push(ids[id]);
+      });
       var avatar = url + 'w_180,h_200/' + user.avatar;
       var cover = url + 'w_1196,h_400/' + user.cover;
       return(
@@ -59,7 +67,7 @@ var UserPage = React.createClass({
               <Following follows={this.state.user.follows}/>
             </div>
           </div>
-          <UserTrackList tracks={user.tracks}/>
+          <UserTrackList tracks={tracks}/>
           <FollowButton userId={this.state.user.id} />
         </div>
       );

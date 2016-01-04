@@ -26,8 +26,8 @@ var TrackListItem = React.createClass({
 
 
   render: function(){
-    var image = url + 'w_39,h_39/' + this.props.track.image;
-    var avatar = url + 'w_39,h_39/' + this.props.track.user.avatar;
+    var image = url + 'w_50,h_50/' + this.props.track.image;
+    var avatar = url + 'w_50,h_50/' + this.props.track.user.avatar;
     return (
       <li className="track-list-item" >
         <div className='item-content'>

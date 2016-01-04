@@ -184,3 +184,85 @@ avatar: 'galantis_14_f3zpwq.jpg',
 bio: 'Yo we are GALANTIS. We made some super sweet beats so make sure that you check them out and throw them a like.',
 cover: 'galantis-peanut-butter-and-jelly_ld7may.jpg'
 )
+
+User.create(
+username: 'xxxxxx', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyyyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+User.create(
+username: 'xxxxxxyyyyyyy', email: 'example.gmail.com', password: 'secretpassword',
+)
+
+
+j = 7
+while j < 13
+  i = j / 2
+  while i < 24
+    Like.create(user_id: j, track_id: i)
+    i += 1
+  end
+  j += 1
+end
+
+
+Like.create(user_id: 13, track_id: 1)
+Like.create(user_id: 13, track_id: 3)
+Like.create(user_id: 13, track_id: 4)
+Like.create(user_id: 13, track_id: 6)
+Like.create(user_id: 13, track_id: 13)
+Like.create(user_id: 13, track_id: 12)
+Like.create(user_id: 13, track_id: 10)
+Like.create(user_id: 13, track_id: 20)
+Like.create(user_id: 13, track_id: 23)
+Like.create(user_id: 13, track_id: 9)
+Like.create(user_id: 14, track_id: 17)
+Like.create(user_id: 14, track_id: 12)
+Like.create(user_id: 14, track_id: 11)
+Like.create(user_id: 14, track_id: 5)
+Like.create(user_id: 14, track_id: 9)
+Like.create(user_id: 14, track_id: 20)
+Like.create(user_id: 14, track_id: 22)
+Like.create(user_id: 14, track_id: 10)
+Like.create(user_id: 15, track_id: 7)
+Like.create(user_id: 15, track_id: 10)
+Like.create(user_id: 15, track_id: 13)
+Like.create(user_id: 15, track_id: 16)
+Like.create(user_id: 15, track_id: 19)
+Like.create(user_id: 15, track_id: 22)
+Like.create(user_id: 15, track_id: 13)
+Like.create(user_id: 16, track_id: 2)
+Like.create(user_id: 16, track_id: 8)
+Like.create(user_id: 16, track_id: 19)
+Like.create(user_id: 16, track_id: 20)
+Like.create(user_id: 16, track_id: 13)
+Like.create(user_id: 16, track_id: 18)
+Like.create(user_id: 16, track_id: 23)
+Like.create(user_id: 16, track_id: 13)

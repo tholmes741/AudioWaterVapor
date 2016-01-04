@@ -123,7 +123,7 @@ var Navbar = React.createClass({
               <li ><a
                 className='nav-button'
                 onClick={this.tracks}
-                id='nav-btn'>Track</a></li>
+                id='nav-btn'>Tracks</a></li>
             </ul>
             <SearchBar />
             {userButtons}

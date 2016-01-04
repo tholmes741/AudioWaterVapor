@@ -24,19 +24,23 @@ image: 'appl1-copy-600x375_l2i5kn.png'
 
 Track.create(
 user_id: 7, title: 'Gold Dust', track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817633/Galantis_Gold_Dust_zauaru.mp3',
-image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg',
+play_count: 245
 )
 Track.create(
 user_id: 7, title: 'You', track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817628/Galantis_You_fr3eqh.mp3',
-image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg',
+play_count: 421
 )
 Track.create(
 user_id: 7, title: 'Peanut Butter Jelly', track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817634/Galantis_Peanut_Butter_Jelly_pyzpmt.mp3',
-image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg',
+play_count: 111
 )
 Track.create(
 user_id: 7, title: 'Firebird', track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817630/Galantis_Firebird_naivkm.mp3',
-image: 'Pharmacy_by_Galantis_tmzjfg.jpg'
+image: 'Pharmacy_by_Galantis_tmzjfg.jpg',
+play_count: 312
 )
 
 Track.create(

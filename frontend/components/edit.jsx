@@ -115,7 +115,7 @@ var Edit = React.createClass({
           <div className='form-group'>
             <lable>Bio</lable>
             <br></br>
-            <input
+            <textarea
               id='bio'
               className='form-control'
               type='textarea'

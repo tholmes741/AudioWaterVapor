@@ -11,19 +11,19 @@ var UserTrackListItem = React.createClass({
   },
 
   render: function(){
-    var image = url + 'w_35,h_35/' + this.props.track.image;
+    var image = url + 'w_39,h_39/' + this.props.track.image;
     return (
       <li className="track-list-item">
-        {this.props.track.title}
-        <br></br>
-        <span className='fa fa-play fa-2x'></span>
-        <img
-          onClick={this.handleClick}
-          src={image}
-          className="icon"></img>
-        <Like track={this.props.track}/>
-        <div>Play Counter: {this.props.track.playCount}</div>
-
+        <div className='item-content'>
+          <span><img
+            onClick={this.handleClick}
+            src={image}
+            className="icon"></img></span>
+          <span className='fa fa-play fa-2x'></span>
+          <span>{this.props.track.title}</span>
+          <span><Like track={this.props.track}/></span>
+          <span className='play-count'>Play Count: {this.props.track.playCount}</span>
+        </div>
       </li>
     );
   }

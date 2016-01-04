@@ -32,7 +32,7 @@ var Following = React.createClass({
     if (users.length === 0) {
       items.push(
         <li key={1}>
-          You are not following anybody. When you do, they will show up here
+          No one being followed.
         </li>
       );
     } else {
@@ -40,7 +40,7 @@ var Following = React.createClass({
       users.forEach(function(user){
         avatar = url + 'w_40,h_40/' + user.avatar;
         items.push(
-          <li key={user.id} onClick={this.clicked} id={user.id} className='following'>
+          <li key={user.id} onClick={this.clicked} id={user.id} className='following-item'>
             <img src={avatar}></img>
             {user.username}
           </li>

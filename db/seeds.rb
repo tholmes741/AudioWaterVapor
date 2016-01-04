@@ -8,7 +8,7 @@
 
 
 Track.create(
-user_id: 1, title: "Latch Remix", track_url: 'assets/Latch_lost_kings.mp3',
+user_id: 1, title: "Latch Remix", track_url: 'http://res.cloudinary.com/tholmes741/video/upload/v1450817638/Latch_lost_kings_icyw4s.mp3',
 image: 'abstract00_v49gg5.jpg'
 )
 
@@ -266,3 +266,9 @@ Like.create(user_id: 16, track_id: 13)
 Like.create(user_id: 16, track_id: 18)
 Like.create(user_id: 16, track_id: 23)
 Like.create(user_id: 16, track_id: 13)
+
+
+Follow.create(follower: 1, followee: 3)
+Follow.create(follower: 1, followee: 4)
+Follow.create(follower: 1, followee: 5)
+Follow.create(follower: 1, followee: 6)

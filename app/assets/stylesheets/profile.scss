@@ -65,8 +65,14 @@ button.btn.follow-btn:hover {
 }
 
 li.following-item {
+  width: 160px;
   background-color: white;
   border: 1px solid black;
+}
+
+li.following-item:hover {
+  cursor: pointer;
+  background-color: #ddd;
 }
 
 .following {

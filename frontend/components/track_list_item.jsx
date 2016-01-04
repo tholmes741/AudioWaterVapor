@@ -32,6 +32,7 @@ var TrackListItem = React.createClass({
       <li className="track-list-item" >
         <div className='item-content'>
           <span><img
+            onClick={this.handleClick}
             src={image}
             className="icon"></img></span>
           {this.button()}

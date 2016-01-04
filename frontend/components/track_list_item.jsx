@@ -17,7 +17,7 @@ var TrackListItem = React.createClass({
   },
 
   button: function(){
-    if (this.props.idx === this.props.currentTrack) {
+    if (this.props.track.id === this.props.currentTrack) {
       return(<span className='fa fa-pause fa-2x' onClick={this.handleClick}></span>);
     } else {
       return(<span className='fa fa-play fa-2x'onClick={this.handleClick}></span>);

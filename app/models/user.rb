@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token, :ensure_avatar, :ensure_bio, :ensure_cover
 
   def ensure_cover
-    self.cover ||= "gerenic_cover_txh0tf.png"
+    self.cover ||= "generic_cover_ip8rgn.jpg"
   end
 
   def ensure_bio

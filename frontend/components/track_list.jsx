@@ -22,7 +22,9 @@ var TrackList = React.createClass({
   },
 
   playChanged: function(){
-    this.setState({currentTrack: PlayStore.idx()});
+    if (PlayStore.track()) {
+      this.setState({currentTrack: PlayStore.track().id});
+    }
   },
 
   tracksChanged: function() {

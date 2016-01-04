@@ -10,6 +10,14 @@ var UserTrackListItem = React.createClass({
     this.props.registerTracks(this.props.idx);
   },
 
+  button: function(){
+    if (this.props.track.id === this.props.currentTrack) {
+      return(<span className='fa fa-pause fa-2x' onClick={this.handleClick}></span>);
+    } else {
+      return(<span className='fa fa-play fa-2x'onClick={this.handleClick}></span>);
+    }
+  },
+
   render: function(){
     var image = url + 'w_39,h_39/' + this.props.track.image;
     return (
@@ -19,7 +27,7 @@ var UserTrackListItem = React.createClass({
             onClick={this.handleClick}
             src={image}
             className="icon"></img></span>
-          <span className='fa fa-play fa-2x'></span>
+          {this.button()}
           <span>{this.props.track.title}</span>
           <span><Like track={this.props.track}/></span>
           <span className='play-count'>Play Count: {this.props.track.playCount}</span>

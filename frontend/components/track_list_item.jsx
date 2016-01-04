@@ -16,27 +16,32 @@ var TrackListItem = React.createClass({
     this.history.pushState(null, 'users/' + this.props.track.user.id);
   },
 
+  button: function(){
+    if (this.props.idx === this.props.currentTrack) {
+      return(<span className='fa fa-pause fa-2x' onClick={this.handleClick}></span>);
+    } else {
+      return(<span className='fa fa-play fa-2x'onClick={this.handleClick}></span>);
+    }
+  },
+
 
   render: function(){
-    var image = url + 'w_35,h_35/' + this.props.track.image;
-    var avatar = url + 'w_35,h_35/' + this.props.track.user.avatar;
+    var image = url + 'w_39,h_39/' + this.props.track.image;
+    var avatar = url + 'w_39,h_39/' + this.props.track.user.avatar;
     return (
-      <li className="track-list-item">
+      <li className="track-list-item" >
         <div className='item-content'>
-          {this.props.track.title}
-          <br></br>
-          Play
-          <img
-            onClick={this.handleClick}
+          <span><img
             src={image}
-            className="icon"></img>
-          <div>{this.props.track.user.username}</div>
-          <img
+            className="icon"></img></span>
+          {this.button()}
+          <span>{this.props.track.title} </span>
+          <span>{this.props.track.playCount}</span>
+          <span><img
             src={avatar}
             className="icon"
-            onClick={this.userProfile}></img>
-          <Like track={this.props.track}/>
-          <div>Play Counter: {this.props.track.playCount}</div>
+            onClick={this.userProfile}></img> {this.props.track.user.username}</span>
+          <span><Like track={this.props.track}/></span>
         </div>
       </li>
     );

@@ -38,6 +38,10 @@ PlayStore.track = function(){
   return _track;
 };
 
+PlayStore.idx = function(){
+  return _idx;
+};
+
 
 
 module.exports = PlayStore;

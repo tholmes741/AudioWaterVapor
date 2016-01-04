@@ -31,9 +31,11 @@ var FollowButton = React.createClass({
   onChange: function(){
     var currentUser = UserStore.find(SessionStore.currentUser());
     var follows = [];
-    currentUser.follows.forEach(function(follow){
-      follows.push(follow.followee);
-    });
+    if (currentUser) {
+      currentUser.follows.forEach(function(follow){
+        follows.push(follow.followee);
+      });
+    }
     this.setState({currentUser: currentUser, follows: follows});
   },
 

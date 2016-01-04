@@ -1,12 +1,7 @@
 .track-list-container{
-   height: auto;
    margin: 0 auto;
    margin-top: 65px;
    margin-bottom: 30px;
-   width: 600px;
-   border: 1px solid black;
-   border-radius: 5px;
-   background-color: white;
 }
 
 .user-track-list-container{
@@ -26,8 +21,12 @@
 
 .track-list-item{
   border: 1px solid black;
-  opacity: none;
+  background-color: white;
+  width: 600px;
+  margin: 0 auto;
 }
+
+
 
 .item-content {
   display: inline-block;;
@@ -40,4 +39,13 @@
 .not-liked {
   filter: grayscale(1);
   -webkit-filter: grayscale(1);
+}
+
+.fa-2x {
+  position: relative;
+  top: 6px;
+}
+
+.fa-2x:hover {
+  cursor: pointer;
 }

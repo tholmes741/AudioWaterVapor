@@ -44,20 +44,20 @@ var Like = React.createClass({
     var url = 'http://res.cloudinary.com/tholmes741/image/upload/w_30,h_30/Heart-Small-Button-_0008_fodozy.jpg'
     var button;
     if (this.state.currentUser === null || this.state.currentUser === this.props.track.user.id){
-      button = <div><img src={url} className='liked'></img></div>;
+      button = <span><img src={url} className='liked'></img></span>;
     } else if (this.props.track.liked) {
       button = (
-        <div
+        <span
           onClick={this.unlike}>
           <img className='liked' src={url}></img>
-        </div>
+        </span>
       );
     } else {
       button = (
-        <div
+        <span
           onClick={this.like}>
           <img className='not-liked'src={url}></img>
-        </div>
+        </span>
       );
     }
     return button;
@@ -65,10 +65,10 @@ var Like = React.createClass({
 
   render: function(){
     return(
-      <div className='like'>
+      <span className='like'>
         {this.button()}
         {this.props.track.likeCount}
-      </div>
+      </span>
     );
   }
 });

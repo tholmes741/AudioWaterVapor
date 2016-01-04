@@ -16,7 +16,7 @@ var UserTrackListItem = React.createClass({
       <li className="track-list-item">
         {this.props.track.title}
         <br></br>
-        Play
+        <span className='fa fa-play fa-2x'></span>
         <img
           onClick={this.handleClick}
           src={image}

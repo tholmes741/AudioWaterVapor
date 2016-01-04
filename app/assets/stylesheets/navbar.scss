@@ -57,18 +57,22 @@ nav.navbar {
 }
 
 .search-result-container {
-  margin-left: 171px;
-  width: 248px;
-  position: fixed;
+  list-style: none;
   z-index: 100;
   margin-top: 40px;
-  list-style: none;
-  background-color: white;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  position: fixed;
 }
 
 .result {
+  margin-left: 130px;
+  width: 250px;
+  background-color: white;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
   border-bottom: 1px solid black;
   height: 40px;
+}
+
+.result:hover {
+  background-color: blue;
 }

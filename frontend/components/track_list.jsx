@@ -3,19 +3,26 @@ var TrackStore = require('../stores/tracks');
 var ApiUtils = require('../utils/api_utils.js');
 var TrackListItem = require('./track_list_item.jsx');
 var PlayActions = require('../actions/play_actions.js');
+var PlayStore = require('../stores/play.js');
 
 var TrackList = React.createClass({
   getInitialState: function(){
-    return {tracks: []};
+    return {tracks: [], currentTrack: null};
   },
 
   componentDidMount: function(){
     this.listener = TrackStore.addListener(this.tracksChanged);
+    this.play = PlayStore.addListener(this.playChanged);
     ApiUtils.fetchAllTracks();
   },
 
   componentWillUnmount: function(){
     this.listener.remove();
+    this.play.remove();
+  },
+
+  playChanged: function(){
+    this.setState({currentTrack: PlayStore.idx()});
   },
 
   tracksChanged: function() {
@@ -34,7 +41,8 @@ var TrackList = React.createClass({
           track={track}
           key={idx}
           idx={idx}
-          registerTracks={that.registerTracks}/>);
+          registerTracks={that.registerTracks}
+          currentTrack={that.state.currentTrack}/>);
     });
     return(
       <div className='track-list-container'>

@@ -1,6 +1,4 @@
-# AudioWaterVapor
-
-[Audio Water Vapor Live][live]
+# [AudioWaterVapor][live]
 
 
 [live]: www.audiowatervapor.xyx
@@ -14,7 +12,7 @@ Users will be able to follow other users for easy access to their music along wi
 tracks. The search bar will allow for users to search for artists or tracks and will
 show results for any partial matches. Users will also be able to edit their profile pictures,
 cover photos, and bios to customize their page. You will also be able to share your music with
-everyone else on the site through upload. 
+everyone else on the site through upload.
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 - [X] Create an account

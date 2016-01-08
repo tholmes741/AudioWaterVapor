@@ -1,7 +1,7 @@
 # AudioWaterVapor
 
 
-live: www.audiowatervapor.xyx
+live: www.audiowatervapor.xyz
 
 ## Minimum Viable Product
 

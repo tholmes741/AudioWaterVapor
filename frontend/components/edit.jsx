@@ -53,7 +53,7 @@ var Edit = React.createClass({
     e.preventDefault();
     if (this.preventBlanks()) {
       ApiUtils.updateUser(this.state, SessionStore.currentUser(), function(){
-        this.props.history.pushState(null, "/");
+        this.props.history.pushState(null, "users/" + this.state.id);
       }.bind(this));
     }
   },

@@ -1,24 +1,30 @@
 # AudioWaterVapor
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Audio Water Vapor Live][live]
 
-[heroku]: https://audio-water-vapor.herokuapp.com
+
+[live]: www.audiowatervapor.xyx
 
 ## Minimum Viable Product
 
 AudioWaterVapor is a web application inspired by SoundCloud built using Ruby on Rails
 and React.js. AudioWaterVapor allows users to listen to tracks no matter what
-they are doing on the site. This will be a single page application.
+they are doing on the site. This is possible because it will be a Single-Page Application.
+Users will be able to follow other users for easy access to their music along with liking
+tracks. The search bar will allow for users to search for artists or tracks and will
+show results for any partial matches. Users will also be able to edit their profile pictures,
+cover photos, and bios to customize their page. You will also be able to share your music with
+everyone else on the site through upload. 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
-- [ ] Listen to uploaded audio files (while staying on site)
-- [ ] Upload audio files
-- [ ] Search through users/artists
-- [ ] Like tracks by other users
+- [X] Create an account
+- [X] Log in / Log out
+- [X] Listen to uploaded audio files (while staying on site)
+- [X] Upload audio files
+- [X] Search through users/artists
+- [X] Like tracks by other users
 - [ ] Comment on tracks
-- [ ] Follow other users
+- [X] Follow other users
 
 
 ## Design Docs

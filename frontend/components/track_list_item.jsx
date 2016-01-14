@@ -36,12 +36,10 @@ var TrackListItem = React.createClass({
             src={image}
             className="icon"></img></span>
           {this.button()}
-          <span>{this.props.track.title} </span>
+          <span className='track-title'> <strong>{this.props.track.title}</strong></span>
           <span className='play-count'>Play Count: {this.props.track.playCount}</span>
-          <span onClick={this.userProfile} className='icon-click'><img
-            src={avatar}
-            className="icon"
-            ></img> {this.props.track.user.username}</span>
+          <span onClick={this.userProfile} className='icon-click'>
+            <i>{this.props.track.user.username}</i></span>
           <span><Like track={this.props.track}/></span>
         </div>
       </li>

@@ -28,7 +28,7 @@ var UserTrackListItem = React.createClass({
             src={image}
             className="icon"></img></span>
           {this.button()}
-          <span>{this.props.track.title}</span>
+          <span><strong>{this.props.track.title}</strong></span>
           <span><Like track={this.props.track}/></span>
           <span className='play-count'>Play Count: {this.props.track.playCount}</span>
         </div>

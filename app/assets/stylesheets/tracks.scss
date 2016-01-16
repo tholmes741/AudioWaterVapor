@@ -57,9 +57,13 @@
 .fa-2x {
   position: relative;
   top: 6px;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .fa-2x:hover {
   cursor: pointer;
+}
+
+.playing {
+  background-color: #66e9ff;
 }

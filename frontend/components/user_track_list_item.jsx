@@ -12,7 +12,7 @@ var UserTrackListItem = React.createClass({
 
   button: function(){
     if (this.props.track.id === this.props.currentTrack) {
-      return(<span className='fa fa-pause fa-2x' onClick={this.handleClick}></span>);
+      return(<img src='http://res.cloudinary.com/tholmes741/image/upload/w_30,h_30/black-white-equaliser_xwtouk.png'></img>);
     } else {
       return(<span className='fa fa-play fa-2x'onClick={this.handleClick}></span>);
     }
@@ -20,9 +20,13 @@ var UserTrackListItem = React.createClass({
 
   render: function(){
     var image = url + 'w_50,h_50/' + this.props.track.image;
+    var color = 'item-content';
+    if (this.props.track.id === this.props.currentTrack) {
+      color += ' playing';
+    }
     return (
       <li className="track-list-item">
-        <div className='item-content'>
+        <div className={color}>
           <span><img
             onClick={this.handleClick}
             src={image}

@@ -41,7 +41,7 @@ var Like = React.createClass({
   },
 
   button: function(){
-    var url = 'http://res.cloudinary.com/tholmes741/image/upload/w_30,h_30/Heart-Small-Button-_0008_fodozy.jpg'
+    var url = 'http://res.cloudinary.com/tholmes741/image/upload/w_30,h_30/Heart-Small-Button-_0008_igyflu.png';
     var button;
     if (this.state.currentUser === null || this.state.currentUser === this.props.track.user.id){
       button = <span><img src={url} className='liked'></img></span>;

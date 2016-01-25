@@ -25,7 +25,7 @@ var Player = React.createClass({
     }
   },
 
-  played: function(){ 
+  played: function(){
     ApiUtils.updateTrackCounter(this.props.track.id);
   },
 

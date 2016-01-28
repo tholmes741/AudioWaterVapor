@@ -37,7 +37,7 @@ var Player = React.createClass({
 
     return(
       <div className="player">
-        {this.props.track.title}
+        <strong>{this.props.track.title}</strong> <i>{this.props.track.user.username}</i>
         <audio
           ref="audio"
           src={this.props.track.trackUrl}

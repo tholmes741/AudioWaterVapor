@@ -1,6 +1,7 @@
 /*global url*/
 var React = require('react');
 var SearchStore = require('../stores/search.js');
+var SearchActions = require('../actions/search_actions.js');
 var ApiUtils = require('../utils/api_utils.js');
 var History = require('react-router').History;
 
@@ -30,6 +31,7 @@ var SearchResults = React.createClass({
   },
 
   clicked: function(e) {
+    SearchActions.empty();
     var userId = e.currentTarget.id;
     this.history.pushState(null, '/users/' + userId);
   },

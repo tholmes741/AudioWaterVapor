@@ -11,6 +11,13 @@ var SearchBar = React.createClass({
     return {search: ''};
   },
 
+  componentDidMount: function() {
+
+    $(".search-bar").blur(function(){
+      setTimeout(SearchActions.empty, 100);
+    });
+  },
+
   handleSubmit: function(e){
     e.preventDefault();
   },
@@ -40,7 +47,7 @@ var SearchBar = React.createClass({
               className="search-bar"
               placeholder="Search by artist or track"
               onChange={this.onChange}
-              valeu={this.state.search}></input>
+              value={this.state.search}></input>
           </div>
         </form>
       </div>

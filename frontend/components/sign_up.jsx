@@ -47,6 +47,15 @@ var SignUp = React.createClass({
     ApiUtils.createSession(credentials);
   },
 
+  demoUser: function(e){
+    e.preventDefault();
+    var credentials = {
+      username: 'Demo User',
+      password: 'password'
+    };
+    ApiUtils.createSession(credentials);
+  },
+
   handleSubmit: function(e){
     e.preventDefault();
     var user = {
@@ -101,6 +110,11 @@ var SignUp = React.createClass({
             type="submit"
             value="Create Account"
             className="btn btn-default sign-up-btn"/>
+          <div className='demo-text'>
+            Don't have an account? Login as a demo user.</div>
+          <button
+            className='btn btn-defualt demo-btn'
+            onClick={this.demoUser}>Sign in as Demo User</button>
         </form>
       </div>
     );

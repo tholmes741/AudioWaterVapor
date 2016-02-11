@@ -40,10 +40,22 @@ var Like = React.createClass({
     ApiUtils.destroyLike(id, this.props.track.id);
   },
 
+  signInPrompt: function(){
+    alert('Sign up or log in to like tracks, make a profile, and upload songs!');
+  },
+
   button: function(){
     var url = 'http://res.cloudinary.com/tholmes741/image/upload/w_30,h_30/Heart-Small-Button-_0008_igyflu.png';
     var button;
-    if (this.state.currentUser === null || this.state.currentUser === this.props.track.user.id){
+
+    if (this.state.currentUser === null) {
+      button = (
+        <span
+          onClick={this.signInPrompt}>
+          <img src={url} className='liked'></img>
+        </span>
+      );
+    } else if (this.state.currentUser === this.props.track.user.id) {
       button = <span><img src={url} className='liked'></img></span>;
     } else if (this.props.track.liked) {
       button = (

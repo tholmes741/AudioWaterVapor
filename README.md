@@ -3,7 +3,7 @@
 
 live: www.audiowatervapor.xyz
 
-./docs/audio_ss.png
+![Audio water vapor] (./docs/audio_ss.png)
 
 ## Minimum Viable Product
 

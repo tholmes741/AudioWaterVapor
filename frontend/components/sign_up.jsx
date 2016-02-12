@@ -111,7 +111,7 @@ var SignUp = React.createClass({
             value="Create Account"
             className="btn btn-default sign-up-btn"/>
           <div className='demo-text'>
-            Don't have an account? Login as a demo user.</div>
+            Don't want to make an account? Login as a demo user.</div>
           <button
             className='btn btn-defualt demo-btn'
             onClick={this.demoUser}>Sign in as Demo User</button>

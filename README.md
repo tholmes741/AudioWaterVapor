@@ -3,6 +3,8 @@
 
 live: www.audiowatervapor.xyz
 
+./docs/audio_ss.png
+
 ## Minimum Viable Product
 
 AudioWaterVapor is a web application inspired by SoundCloud built using Ruby on Rails

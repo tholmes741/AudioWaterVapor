@@ -14,7 +14,7 @@ var SearchBar = React.createClass({
   componentDidMount: function() {
 
     $(".search-bar").blur(function(){
-      setTimeout(SearchActions.empty, 100);
+      setTimeout(SearchActions.empty, 200);
     });
   },
 
